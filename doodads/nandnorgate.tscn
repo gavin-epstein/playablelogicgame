@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://culdlu5wigc25"]
+
+[ext_resource type="Script" uid="uid://besvb5xemrcmg" path="res://doodads/nandnorgate.gd" id="1_31lh2"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_31lh2"]
+[ext_resource type="Texture2D" uid="uid://md28e705c4ps" path="res://doodads/images/terminal.png" id="2_xnjbf"]
+[ext_resource type="Texture2D" uid="uid://m5crjbnr2jry" path="res://doodads/images/nandnor.png" id="4_xmh5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rtr7"]
+size = Vector2(932, 1170)
+
+[node name="nandnor" type="Node2D" unique_id=2002650549]
+script = ExtResource("1_31lh2")
+
+[node name="termext" type="Sprite2D" parent="." unique_id=302129629]
+position = Vector2(-123, 326)
+rotation = -3.1415925
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_xnjbf")
+
+[node name="0" parent="." unique_id=1841688787 instance=ExtResource("2_31lh2")]
+position = Vector2(-621, -232)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="1" parent="." unique_id=274440768 instance=ExtResource("2_31lh2")]
+position = Vector2(-621, 320)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="nand" parent="." unique_id=2097018757 instance=ExtResource("2_31lh2")]
+position = Vector2(747, -184)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="nor" parent="." unique_id=356763340 instance=ExtResource("2_31lh2")]
+position = Vector2(739, 272)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="gate" type="Sprite2D" parent="." unique_id=2096905506]
+position = Vector2(93.00002, 56)
+scale = Vector2(1.414, 1.364)
+texture = ExtResource("4_xmh5b")
+
+[node name="draggable" type="Area2D" parent="." unique_id=920224182]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=476959739]
+position = Vector2(74, 31)
+shape = SubResource("RectangleShape2D_4rtr7")

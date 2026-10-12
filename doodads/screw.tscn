@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dadnh3xrap4q0"]
+
+[ext_resource type="Texture2D" uid="uid://cni5w5nt3gquh" path="res://doodads/images/screw.png" id="1_7t2gy"]
+
+[node name="Screw" type="Node2D" unique_id=700013909]
+
+[node name="Screw" type="Sprite2D" parent="." unique_id=2049265672]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7t2gy")

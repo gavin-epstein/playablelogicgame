@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bvimmyvxk5tou"]
+
+[ext_resource type="Script" uid="uid://75ixwy1qi6kf" path="res://doodads/lightbulb.gd" id="1_bbwut"]
+[ext_resource type="Texture2D" uid="uid://db11ahsvvwdih" path="res://doodads/images/light0.png" id="2_iyngx"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_j8144"]
+[ext_resource type="Texture2D" uid="uid://ddxrfpghlsff1" path="res://doodads/images/light1.png" id="3_xv7ai"]
+[ext_resource type="Texture2D" uid="uid://dopsf4pyhoh8o" path="res://doodads/images/light-1.png" id="4_j8144"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="6_hvkqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvkqk"]
+size = Vector2(670, 1175)
+
+[node name="Lightbulb" type="Node2D" unique_id=994670299]
+script = ExtResource("1_bbwut")
+
+[node name="0" parent="." unique_id=1841688787 instance=ExtResource("2_j8144")]
+position = Vector2(-614.00006, -35.999996)
+rotation = 0.1605703
+scale = Vector2(0.7, 0.7)
+locked = false
+
+[node name="Light0" type="Sprite2D" parent="." unique_id=283649978]
+position = Vector2(0, -500)
+texture = ExtResource("2_iyngx")
+
+[node name="Light1" type="Sprite2D" parent="." unique_id=60822161]
+visible = false
+position = Vector2(0, -500)
+texture = ExtResource("3_xv7ai")
+
+[node name="Light2" type="Sprite2D" parent="." unique_id=815827719]
+visible = false
+position = Vector2(0, -500)
+texture = ExtResource("4_j8144")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1993483194]
+offset_left = -321.0
+offset_top = 153.0
+offset_right = -3.0
+offset_bottom = 288.0
+scale = Vector2(2, 2)
+theme = ExtResource("6_hvkqk")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]wan[/center]"
+fit_content = true
+
+[node name="draggable" type="Area2D" parent="." unique_id=777024798]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=940214931]
+position = Vector2(-3, -140.5)
+shape = SubResource("RectangleShape2D_hvkqk")

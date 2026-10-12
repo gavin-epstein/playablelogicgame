@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dqsi7hqmcgeyx"]
+
+[ext_resource type="Script" uid="uid://cjj868iamt4tm" path="res://doodads/hexor.gd" id="1_3oxdr"]
+[ext_resource type="Texture2D" uid="uid://cpy7k85bf5nlr" path="res://doodads/images/hexagon.png" id="2_lbwo5"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_ywdea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpvxe"]
+radius = 464.64233
+
+[node name="hex" type="Node2D" unique_id=997263221]
+rotation = 0.5235988
+script = ExtResource("1_3oxdr")
+
+[node name="0" parent="." unique_id=1841688787 instance=ExtResource("2_ywdea")]
+position = Vector2(779.7126, -0.071777344)
+rotation = -3.1337445
+scale = Vector2(0.74999994, 0.74999994)
+locked = false
+
+[node name="1" parent="." unique_id=1465797355 instance=ExtResource("2_ywdea")]
+position = Vector2(-369.28705, -644.7844)
+rotation = 1.0471977
+scale = Vector2(0.75, 0.75)
+locked = false
+
+[node name="2" parent="." unique_id=107635713 instance=ExtResource("2_ywdea")]
+position = Vector2(-380.64084, 660.42554)
+rotation = -1.0471976
+scale = Vector2(0.75, 0.75)
+locked = false
+
+[node name="3" parent="." unique_id=2086681159 instance=ExtResource("2_ywdea")]
+position = Vector2(382.14374, 654.85645)
+rotation = -2.0943952
+scale = Vector2(0.74999994, 0.74999994)
+locked = false
+
+[node name="4" parent="." unique_id=407003861 instance=ExtResource("2_ywdea")]
+position = Vector2(383.00006, -637.85645)
+rotation = 2.0943952
+scale = Vector2(0.75, 0.75)
+locked = false
+
+[node name="5" parent="." unique_id=1125985908 instance=ExtResource("2_ywdea")]
+position = Vector2(-777.9999, -6.999998)
+scale = Vector2(0.75, 0.75)
+locked = false
+
+[node name="Const1" type="Sprite2D" parent="." unique_id=1730796756]
+rotation = -0.5235988
+texture = ExtResource("2_lbwo5")
+
+[node name="draggable" type="Area2D" parent="." unique_id=396049245]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=1526901283]
+position = Vector2(3.5, 0.5)
+shape = SubResource("CircleShape2D_dpvxe")

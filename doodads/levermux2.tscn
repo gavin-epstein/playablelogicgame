@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://diraivbxdkd0w"]
+
+[ext_resource type="Script" uid="uid://cgfeau5r81bw2" path="res://doodads/levermux_2.gd" id="1_ivne1"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_ivne1"]
+[ext_resource type="Texture2D" uid="uid://cek12g7uaqrdu" path="res://doodads/images/levermux2on.png" id="3_y05s2"]
+[ext_resource type="Texture2D" uid="uid://c8w6ul4qq3p2j" path="res://doodads/images/levermux2off.png" id="4_ivne1"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="5_ygeu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygeu7"]
+size = Vector2(774, 1235)
+
+[node name="lever" type="Node2D" unique_id=2002650549]
+script = ExtResource("1_ivne1")
+
+[node name="0" parent="." unique_id=1841688787 instance=ExtResource("2_ivne1")]
+position = Vector2(-589, -232)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="1" parent="." unique_id=274440768 instance=ExtResource("2_ivne1")]
+position = Vector2(-581, 224)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="2" parent="." unique_id=2097018757 instance=ExtResource("2_ivne1")]
+position = Vector2(571, 0)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=941059217]
+offset_left = -281.0
+offset_top = 401.0
+offset_right = -5.5
+offset_bottom = 542.5
+scale = Vector2(2, 2)
+theme = ExtResource("5_ygeu7")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+fit_content = true
+
+[node name="Lever" type="TextureButton" parent="." unique_id=2094657652]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("3_y05s2")
+texture_pressed = ExtResource("4_ivne1")
+
+[node name="draggable" type="Area2D" parent="." unique_id=1464764120]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=2003494669]
+position = Vector2(6, 83.5)
+shape = SubResource("RectangleShape2D_ygeu7")
+
+[connection signal="toggled" from="Lever" to="." method="_on_lever_toggled"]

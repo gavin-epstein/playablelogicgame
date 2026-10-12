@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://baylv78oux2mx"]
+
+[ext_resource type="Script" uid="uid://hfekyhboly8o" path="res://doodads/const_1_gate.gd" id="1_itv32"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_ftl4x"]
+[ext_resource type="Texture2D" uid="uid://w0ywdky5cus7" path="res://doodads/images/const-1.png" id="3_itv32"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygeu7"]
+radius = 464.64233
+
+[node name="Const1Gate" type="Node2D" unique_id=997263221]
+script = ExtResource("1_itv32")
+val = -1
+
+[node name="0" parent="." unique_id=1841688787 instance=ExtResource("2_ftl4x")]
+position = Vector2(748, 8.999996)
+rotation = -3.1337445
+scale = Vector2(0.74999994, 0.74999994)
+locked = false
+
+[node name="1" parent="." unique_id=1465797355 instance=ExtResource("2_ftl4x")]
+position = Vector2(-384.99988, -607.99994)
+rotation = 1.0471977
+scale = Vector2(0.75, 0.75)
+locked = false
+
+[node name="2" parent="." unique_id=107635713 instance=ExtResource("2_ftl4x")]
+position = Vector2(-377.99988, 585.00006)
+rotation = -1.0471976
+scale = Vector2(0.75, 0.75)
+locked = false
+
+[node name="Const1" type="Sprite2D" parent="." unique_id=1730796756]
+texture = ExtResource("3_itv32")
+
+[node name="draggable" type="Area2D" parent="." unique_id=1300627180]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=1606286944]
+position = Vector2(3.5, 0.5)
+shape = SubResource("CircleShape2D_ygeu7")

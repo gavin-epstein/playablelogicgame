@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://br604hryndp85"]
+
+[ext_resource type="PackedScene" uid="uid://ch10l0wcklr3a" path="res://doodads/andgate.tscn" id="1_sgvcn"]
+[ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="2_x8lwj"]
+[ext_resource type="PackedScene" uid="uid://diraivbxdkd0w" path="res://doodads/levermux2.tscn" id="3_x8lwj"]
+[ext_resource type="PackedScene" uid="uid://bvimmyvxk5tou" path="res://doodads/lightbulb.tscn" id="4_t3dhk"]
+
+[node name="Node2D" type="Node2D" unique_id=1203923865]
+
+[node name="Node2D" parent="." unique_id=2002650549 instance=ExtResource("1_sgvcn")]
+position = Vector2(461, 271)
+scale = Vector2(0.1, 0.1)
+
+[node name="Const1Gate" parent="." unique_id=997263221 instance=ExtResource("2_x8lwj")]
+position = Vector2(197, 261)
+scale = Vector2(0.1, 0.1)
+
+[node name="And" parent="." unique_id=1682118547 instance=ExtResource("1_sgvcn")]
+position = Vector2(683, 209.00002)
+scale = Vector2(0.1, 0.1)
+
+[node name="lever" parent="." unique_id=26854987 instance=ExtResource("3_x8lwj")]
+position = Vector2(381, 138)
+scale = Vector2(0.15, 0.15)
+
+[node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("4_t3dhk")]
+position = Vector2(672.99994, 127.99999)
+scale = Vector2(0.1, 0.1)

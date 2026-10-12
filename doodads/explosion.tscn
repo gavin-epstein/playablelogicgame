@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dnlfb058h67qi"]
+
+[ext_resource type="Texture2D" uid="uid://bwghsqjjrrrbr" path="res://doodads/images/explosion.png" id="1_gkpj6"]
+
+[node name="Explosion" type="Sprite2D" unique_id=1557413800]
+texture = ExtResource("1_gkpj6")

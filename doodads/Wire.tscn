@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dqsfvl4vbx2x"]
+
+[ext_resource type="Script" uid="uid://bhs56spcjnna7" path="res://doodads/wire.gd" id="1_pd48i"]
+[ext_resource type="Texture2D" uid="uid://d28u6bfl778ws" path="res://doodads/images/wire0.png" id="2_jw6d2"]
+[ext_resource type="Texture2D" uid="uid://muakn6m7qalb" path="res://doodads/images/wire1.png" id="3_sx1y0"]
+[ext_resource type="Texture2D" uid="uid://bb6jpswyqek0w" path="res://doodads/images/wire-1.png" id="4_sx1y0"]
+
+[node name="Wire" type="Node2D" unique_id=241528333]
+scale = Vector2(0.02, 0.02)
+script = ExtResource("1_pd48i")
+
+[node name="Wire0" type="Sprite2D" parent="." unique_id=1957778390]
+texture = ExtResource("2_jw6d2")
+
+[node name="Wire1" type="Sprite2D" parent="." unique_id=685021396]
+visible = false
+texture = ExtResource("3_sx1y0")
+
+[node name="Wire-1" type="Sprite2D" parent="." unique_id=1799590130]
+visible = false
+texture = ExtResource("4_sx1y0")
