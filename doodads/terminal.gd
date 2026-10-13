@@ -6,6 +6,7 @@ var screwScene = preload("res://doodads/screw.tscn")
 
 var value =0;
 var wire:Wire;
+var visualWire:Wire;
 @export var locked:bool = false:
 	set(val):
 		locked = val
@@ -23,7 +24,7 @@ func get_value():
 	if self in get_parent().outputs:
 		return get_parent().outputs[self]
 	return 0
-func set_value(val):
+func set_value(val, suppress = false):
 	if  val !=  value:
 		value = val
 		if value == 0:
@@ -38,14 +39,22 @@ func set_value(val):
 			$"0".visible = false
 			$"1".visible = false
 			$"-1".visible = true
-		if not Engine.is_editor_hint():
+		if not Engine.is_editor_hint() and !suppress:
 			emit_signal("changed")
 
 func connect_wire(newWire:Wire, param = "term1"):
-	if wire != null:
-		wire.delete_wire()
+	if (wire != null or visualWire!= null ) and param != "terminals":
+		if visualWire != wire:
+			visualWire.delete_wire()
+		if wire!=null:
+			wire.delete_wire()
+		
 	changed.connect(newWire.input_changed)
-	newWire[param] = self
+	if param != "terminals":
+		newWire[param] = self
+		visualWire = newWire
+	else:
+		newWire[param].append(self)
 	self.wire = newWire
 	if not Engine.is_editor_hint():
 		newWire.input_changed()

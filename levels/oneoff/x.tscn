@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ysqc3w0g3hto"]
+
+[ext_resource type="Texture2D" uid="uid://rekbp85l1jcv" path="res://levels/oneoff/x.png" id="1_3rve0"]
+[ext_resource type="Script" uid="uid://dka8vf6dj2ukg" path="res://levels/oneoff/cullbottom.gd" id="1_g3ngn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bmgug"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rtr7"]
+size = Vector2(74, 75)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=241484711]
+physics_material_override = SubResource("PhysicsMaterial_bmgug")
+lock_rotation = true
+script = ExtResource("1_g3ngn")
+
+[node name="Node2D" type="Sprite2D" parent="." unique_id=107397909]
+texture = ExtResource("1_3rve0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690636685]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_4rtr7")

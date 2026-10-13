@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://baylv78oux2mx" path="res://doodads/const_-1_gate.tscn" id="6_l0kak"]
 [ext_resource type="PackedScene" uid="uid://dqsfvl4vbx2x" path="res://doodads/Wire.tscn" id="9_dyqbh"]
 [ext_resource type="PackedScene" uid="uid://culdlu5wigc25" path="res://doodads/nandnorgate.tscn" id="10_01x3j"]
+[ext_resource type="PackedScene" uid="uid://dqsi7hqmcgeyx" path="res://doodads/hexor.tscn" id="11_chtiu"]
 
 [node name="TestLevel" type="Node2D" unique_id=1203923865]
 script = ExtResource("1_6euoa")
@@ -34,9 +35,6 @@ position = Vector2(379.00003, 108)
 scale = Vector2(0.15, 0.15)
 nimi = "wan"
 
-[node name="2" parent="lever" index="2" unique_id=2097018757]
-locked = true
-
 [node name="lever2" parent="." unique_id=1083743695 instance=ExtResource("3_x8lwj")]
 position = Vector2(385, 411)
 scale = Vector2(0.15, 0.15)
@@ -46,9 +44,6 @@ nimi = "tu"
 position = Vector2(672.99994, 127.99999)
 scale = Vector2(0.1, 0.1)
 nimi = "ilo suno"
-
-[node name="0" parent="Lightbulb" index="0" unique_id=1841688787]
-locked = true
 
 [node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("5_8j3fl")]
 offset_left = 655.0
@@ -65,16 +60,22 @@ reload = true
 position = Vector2(122, 106)
 scale = Vector2(0.1, 0.1)
 
-[node name="Wire" parent="." unique_id=241528333 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("9_dyqbh")]
-position = Vector2(538.125, 116.2)
-rotation = -3.0304499
-scale = Vector2(0.1478622, 0.02)
-term1 = NodePath("../lever/2")
-term2 = NodePath("../Lightbulb/0")
+[node name="Wire" parent="." unique_id=241528333 instance=ExtResource("9_dyqbh")]
+position = Vector2(268.00006, 558)
+rotation = -3.070573
+scale = Vector2(0.78829765, 0.02)
 
 [node name="nandnor" parent="." unique_id=48706120 instance=ExtResource("10_01x3j")]
 position = Vector2(625, 249.00002)
 scale = Vector2(0.1, 0.1)
+
+[node name="hex" parent="." unique_id=1474272201 instance=ExtResource("11_chtiu")]
+position = Vector2(287, 350)
+scale = Vector2(0.07, 0.07)
+
+[node name="hex2" parent="." unique_id=444276830 instance=ExtResource("11_chtiu")]
+position = Vector2(174.99998, 446)
+scale = Vector2(0.07, 0.07)
 
 [editable path="Const1Gate"]
 [editable path="lever"]

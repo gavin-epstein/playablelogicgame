@@ -5,6 +5,7 @@ const MAX_UPDATES_PER_FRAME = 10
 var exploded  =false
 var outputs ={}
 var beingDragged = false
+var explosionsprite:Sprite2D
 
 func _ready() -> void:
 	for term in get_children():
@@ -12,6 +13,8 @@ func _ready() -> void:
 			term.changed.connect(_input_changed)
 	if $draggable != null:
 		$draggable.input_event.connect(_on_draggable_input_event)
+	if get_parent() is Level:
+		get_parent().edited.connect(self._unexplode)
 	calculate()
 	
 func _process(_delta: float) -> void:
@@ -49,11 +52,15 @@ func _input_changed():
 
 
 func _explode():
-	print("splode!")
-	var explosionsprite:Sprite2D = explosionscene.instantiate()
+	#print("splode!")
+	explosionsprite = explosionscene.instantiate()
 	add_child(explosionsprite)
 	exploded = true
 	
+func _unexplode():
+	if exploded:
+		explosionsprite.queue_free()
+		exploded = false
 
 func _on_draggable_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 	if event.is_action_pressed("primaryClick"):
@@ -65,5 +72,5 @@ func _input(event: InputEvent) -> void:
 	if beingDragged and event is InputEventMouseMotion:
 		self.global_position = event.position
 		for child in get_children():
-			if child is WireTerminal and child.wire!=null:
-				child.wire.render()
+			if child is WireTerminal and child.visualWire!=null:
+				child.visualWire.render()

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b87f3eqo73r65"]
+
+[ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_vkd0v"]
+[ext_resource type="Texture2D" uid="uid://b1kfgdg8aqjn3" path="res://decoration/1.png" id="2_20opy"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="2_hldmh"]
+[ext_resource type="Script" uid="uid://c6kmfnjab7xi6" path="res://levels/oneoff/noquit.gd" id="3_bmgug"]
+[ext_resource type="FontFile" uid="uid://s65q76gju1fc" path="res://theme/CoolingCartoon-8OXeB.otf" id="3_gew73"]
+[ext_resource type="Script" uid="uid://did6y7oehbsq4" path="res://levels/oneoff/backandforth.gd" id="5_8l0e1"]
+
+[sub_resource type="SystemFont" id="SystemFont_hldmh"]
+
+[node name="Level3" type="Node2D" unique_id=1262805198]
+script = ExtResource("1_vkd0v")
+
+[node name="bg" type="TextureRect" parent="." unique_id=246135187]
+self_modulate = Color(1, 0.4627451, 0.8352941, 1)
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_20opy")
+
+[node name="Control" type="Control" parent="." unique_id=1008448961]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_hldmh")
+
+[node name="Button" type="Button" parent="Control" unique_id=198498719]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 463.0
+offset_right = 886.0
+offset_bottom = 571.0
+text = "o awen musi [e] "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control" unique_id=1955353625]
+layout_mode = 0
+offset_right = 958.0
+offset_bottom = 451.0
+theme_override_fonts/normal_font = ExtResource("3_gew73")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "
+
+
+	You may be feeling a bit lost or confused or like you should know logic circuits or Toki Pona to play this game. Don't worry! Hopefully the people who are already familiar with these things will be just as lost very soon. "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=922928777]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 20.0
+offset_right = 686.0
+offset_bottom = 143.0
+theme_override_fonts/normal_font = ExtResource("3_gew73")
+bbcode_enabled = true
+text = "[center]What is going on ?[/center]"
+script = ExtResource("5_8l0e1")
+
+[node name="Button2" type="Button" parent="Control" unique_id=760730175]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 463.0
+offset_right = 399.0
+offset_bottom = 579.0
+theme_override_fonts/font = SubResource("SystemFont_hldmh")
+text = " Quit ❌"
+script = ExtResource("3_bmgug")
+
+[connection signal="pressed" from="Control/Button" to="." method="win"]
+[connection signal="pressed" from="Control/Button2" to="Control/Button2" method="_on_pressed"]
