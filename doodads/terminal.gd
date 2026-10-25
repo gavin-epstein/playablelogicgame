@@ -1,12 +1,11 @@
 @tool
 class_name WireTerminal extends Node2D
-var wireScene = preload("res://doodads/Wire.tscn")
-var screwScene = preload("res://doodads/screw.tscn")
+const wireScene = preload("res://doodads/Wire.tscn")
+const screwScene = preload("res://doodads/screw.tscn")
 
 
 var value =0;
 var wire:Wire;
-var visualWire:Wire;
 @export var locked:bool = false:
 	set(val):
 		locked = val
@@ -15,11 +14,13 @@ signal changed
 
 func _ready() -> void:
 	if locked and not Engine.is_editor_hint():
-		var newscrew:Node2D= screwScene.instantiate()
-		add_child(newscrew)
-		newscrew.global_rotation = (randf()-.5)*PI/3.
+		lock()
 
-
+func lock():
+	locked= true
+	var newscrew:Node2D= screwScene.instantiate()
+	add_child(newscrew)
+	newscrew.global_rotation = (randf()-.5)*PI/3.
 func get_value():
 	if self in get_parent().outputs:
 		return get_parent().outputs[self]
@@ -43,25 +44,18 @@ func set_value(val, suppress = false):
 			emit_signal("changed")
 
 func connect_wire(newWire:Wire, param = "term1"):
-	if (wire != null or visualWire!= null ) and param != "terminals":
-		if visualWire != wire:
-			visualWire.delete_wire()
-		if wire!=null:
+	if wire != null:
 			wire.delete_wire()
-		
-	changed.connect(newWire.input_changed)
-	if param != "terminals":
-		newWire[param] = self
-		visualWire = newWire
-	else:
-		newWire[param].append(self)
+	if not changed.is_connected(newWire.input_changed):
+		changed.connect(newWire.input_changed)
+
+	newWire[param] = self
 	self.wire = newWire
 	if not Engine.is_editor_hint():
 		newWire.input_changed()
 	else:
-		print("locking")
 		locked = true
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("primaryClick") and !locked:
 		if wire!=null:
 			wire.delete_wire()
@@ -73,6 +67,11 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		if wire!=null:
 			wire.queue_free()
 func input_changed():
+	#if get_node("../..") is Level:
+		#get_node("../..").add_to_update_queue(self)
+	#else:
+		#print("Level not found by terminal " + name)
+#func process_from_queue():
 	if not Engine.is_editor_hint():
 		if wire!=null:
 			wire.input_changed()

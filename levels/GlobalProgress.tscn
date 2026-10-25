@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b3c2ku35jumuh"]
+
+[ext_resource type="Script" uid="uid://dg15wyrqioh7c" path="res://levels/global_progress.gd" id="1_y2oj0"]
+[ext_resource type="PackedScene" uid="uid://dh7o1oppfxeyl" path="res://levels/actualLevels/wiretutorial.tscn" id="2_6ccdi"]
+[ext_resource type="PackedScene" uid="uid://cdu3bliistls5" path="res://levels/actualLevels/andintro.tscn" id="3_5y21u"]
+[ext_resource type="PackedScene" uid="uid://b87f3eqo73r65" path="res://levels/actualLevels/whatisgoingon.tscn" id="4_5r7sx"]
+[ext_resource type="PackedScene" uid="uid://bw48fv2fep474" path="res://levels/actualLevels/orintro2.tscn" id="6_260hr"]
+[ext_resource type="PackedScene" uid="uid://c8mlflpyewkta" path="res://levels/actualLevels/splitand.tscn" id="7_vjgwe"]
+[ext_resource type="PackedScene" uid="uid://b4tp7oaw0rla2" path="res://levels/actualLevels/constintro1.tscn" id="8_5r7sx"]
+[ext_resource type="PackedScene" uid="uid://gdbfh5y65kjb" path="res://levels/actualLevels/switchand.tscn" id="8_w2wc1"]
+[ext_resource type="PackedScene" uid="uid://hchtad6ukwfw" path="res://levels/actualLevels/orlatch.tscn" id="9_d8trw"]
+[ext_resource type="PackedScene" uid="uid://cgsx01go77hes" path="res://levels/actualLevels/constintro2.tscn" id="9_mgmcb"]
+[ext_resource type="PackedScene" uid="uid://dglwjvegtwypt" path="res://levels/actualLevels/nandnorintro.tscn" id="10_3hj5w"]
+[ext_resource type="PackedScene" uid="uid://d4dpo43t1sihy" path="res://levels/actualLevels/makexor1.tscn" id="11_awone"]
+[ext_resource type="PackedScene" uid="uid://ifgt26pso4xn" path="res://levels/actualLevels/thinkingwithlatches.tscn" id="11_mgmcb"]
+[ext_resource type="PackedScene" uid="uid://bw3340rckd4t6" path="res://levels/actualLevels/explosionintro.tscn" id="12_cf5xo"]
+[ext_resource type="PackedScene" uid="uid://bl7gcpopydkuw" path="res://levels/actualLevels/makexor2.tscn" id="13_lalqq"]
+[ext_resource type="PackedScene" uid="uid://dx8x1amrswfut" path="res://levels/actualLevels/rot3intro.tscn" id="14_4f7c6"]
+[ext_resource type="PackedScene" uid="uid://bcwml6q8g7l76" path="res://levels/actualLevels/rot3latch.tscn" id="15_5ay5m"]
+[ext_resource type="PackedScene" uid="uid://rp6exflsqdc3" path="res://levels/actualLevels/rot3splitand.tscn" id="16_0dlld"]
+
+[node name="GlobalProgress" type="Node2D" unique_id=642168436]
+script = ExtResource("1_y2oj0")
+levelScenes = [ExtResource("2_6ccdi"), ExtResource("3_5y21u"), ExtResource("4_5r7sx"), ExtResource("6_260hr"), ExtResource("7_vjgwe"), ExtResource("8_5r7sx"), ExtResource("9_mgmcb"), ExtResource("8_w2wc1"), ExtResource("9_d8trw"), ExtResource("11_mgmcb"), ExtResource("10_3hj5w"), ExtResource("12_cf5xo"), ExtResource("11_awone"), ExtResource("13_lalqq"), ExtResource("14_4f7c6"), ExtResource("15_5ay5m"), ExtResource("16_0dlld")]
+reload = true
+totalLevels = 17

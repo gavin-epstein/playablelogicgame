@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://dnlfb058h67qi"]
 
 [ext_resource type="Texture2D" uid="uid://bwghsqjjrrrbr" path="res://doodads/images/explosion.png" id="1_gkpj6"]
+[ext_resource type="Script" uid="uid://br0b1wvl2onrb" path="res://doodads/explosion.gd" id="2_txdor"]
+[ext_resource type="AudioStream" uid="uid://3qfwu8am1te0" path="res://sound/explosion1.wav" id="3_32w1d"]
+[ext_resource type="Script" uid="uid://c3aqt3enwy0k6" path="res://sound/sfxnot3d.gd" id="4_bye62"]
 
 [node name="Explosion" type="Sprite2D" unique_id=1557413800]
 texture = ExtResource("1_gkpj6")
+script = ExtResource("2_txdor")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=669729029]
+stream = ExtResource("3_32w1d")
+bus = &"UI"
+script = ExtResource("4_bye62")

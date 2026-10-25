@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ddt7t3w2dowjx"]
+
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="1_5mt28"]
+[ext_resource type="Script" uid="uid://430lpbaeqv34" path="res://levels/level_button.gd" id="1_7j55d"]
+[ext_resource type="AudioStream" uid="uid://d38da6y3a86b5" path="res://sound/buwaow.mp3" id="3_hdjpb"]
+[ext_resource type="Script" uid="uid://c3aqt3enwy0k6" path="res://sound/sfxnot3d.gd" id="4_hdjpb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rtr7"]
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+
+[node name="LevelButton" type="Button" unique_id=820382413]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5mt28")
+script = ExtResource("1_7j55d")
+
+[node name="Check" type="RichTextLabel" parent="." unique_id=227647126]
+self_modulate = Color(1, 1, 1, 0.36078432)
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.19881576, 0.9999998, 0.17315584, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4rtr7")
+bbcode_enabled = true
+text = "[center]✅[/center]"
+fit_content = true
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=25146947]
+stream = ExtResource("3_hdjpb")
+bus = &"UI"
+script = ExtResource("4_hdjpb")

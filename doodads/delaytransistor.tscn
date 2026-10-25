@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d24gfnctv10pd"]
+
+[ext_resource type="Script" uid="uid://dx5bspnprwmo" path="res://doodads/delaytransistor.gd" id="1_pcjw4"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_5ftrq"]
+[ext_resource type="Texture2D" uid="uid://ceroqd1eo43bm" path="res://doodads/images/delaytransistor.png" id="3_pcjw4"]
+
+[node name="PNPN" type="Node2D" unique_id=2002650549]
+script = ExtResource("1_pcjw4")
+
+[node name="0" parent="." unique_id=1841688787 instance=ExtResource("2_5ftrq")]
+position = Vector2(-380.99997, -176)
+rotation = 0.3926991
+scale = Vector2(0.5, 0.5)
+locked = true
+
+[node name="1" parent="." unique_id=274440768 instance=ExtResource("2_5ftrq")]
+position = Vector2(-45, 680)
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+locked = true
+
+[node name="2" parent="." unique_id=2097018757 instance=ExtResource("2_5ftrq")]
+position = Vector2(483, -535.99994)
+rotation = 2.3561945
+scale = Vector2(0.5, 0.5)
+locked = true
+
+[node name="Andgate" type="Sprite2D" parent="." unique_id=2096905506]
+texture = ExtResource("3_pcjw4")

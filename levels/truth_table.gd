@@ -13,8 +13,9 @@ extends Control
 	
 @export var reload:bool=false:
 	set(new):
-		reload= true
-		generate()
+		if Engine.is_editor_hint():
+			reload= true
+			generate()
 var rows:Dictionary = {}
 var roworder = []
 var validated_rows:Dictionary = {}
@@ -65,6 +66,7 @@ func generate():
 		return
 	if len(rows) == 0:
 		generate_rows()
+	
 	var txt= "[table=2]"
 	#header
 	txt+= "[cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
@@ -93,7 +95,8 @@ func generate():
 			txt +=lightcell(cell,validated)
 	txt+="[/table][/cell]"
 	$TableLabel.text = txt
-	$TableLabel.size.x = max(500, 200*(len(switches)+len(lights)))
+	if Engine.is_editor_hint() and get_tree().edited_scene_root !=null :
+		$TableLabel.size.x = max(500, 200*(len(switches)+len(lights)))
 func generate_rows():
 	
 	var current:Array[int] =[]
@@ -129,7 +132,7 @@ func _attempt_validate():
 	var curswitch:Array[int] = []
 	for switch:Lever in switches:
 		curswitch.append(switch.state)
-	if row_to_key(curswitch) in rows.keys() and row_to_key(curswitch) not in validated_rows.keys():
+	if row_to_key(curswitch) in rows.keys(): #and (row_to_key(curswitch) not in validated_rows.keys() or $lukinale.visible==false):
 		var target = rows[row_to_key(curswitch)]
 		var valid = true
 		for i in len(lights):

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://brj874l2khiso"]
+
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="1_yhm31"]
+[ext_resource type="Script" uid="uid://cd755wq488ghe" path="res://levels/draggable.gd" id="2_i2vku"]
+[ext_resource type="Script" uid="uid://dlty3tvfcv1lg" path="res://levels/goNextButton.gd" id="2_v4vub"]
+
+[node name="GoNext" type="Control" unique_id=1243058446]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yhm31")
+
+[node name="Panel" type="RichTextLabel" parent="." unique_id=1802799151]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 217.0
+offset_right = 654.0
+offset_bottom = 447.0
+scale = Vector2(0.75, 0.75)
+bbcode_enabled = true
+text = "[center]pona&mute a[/center]"
+script = ExtResource("2_i2vku")
+
+[node name="Button" type="Button" parent="Panel" unique_id=1751152670]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 85.0
+offset_right = 277.0
+offset_bottom = 206.0
+text = "  utala kama  ⇨  "
+script = ExtResource("2_v4vub")
+
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]

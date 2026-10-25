@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://csdidkxiel78c"]
+
+[ext_resource type="Script" uid="uid://dp3rnfwfwg85w" path="res://doodads/rot_3_gate.gd" id="1_gcp6n"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_ycypk"]
+[ext_resource type="Texture2D" uid="uid://b5xdb82ir0ois" path="res://doodads/images/rot3across.png" id="3_7xwr0"]
+[ext_resource type="Texture2D" uid="uid://djt0hp31ux24y" path="res://doodads/images/rot3base.png" id="3_p0rt2"]
+[ext_resource type="Texture2D" uid="uid://bwacdtcb3ldor" path="res://doodads/images/rot3up.png" id="5_gcp6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rtr7"]
+size = Vector2(863, 893)
+
+[node name="Rot3" type="Node2D" unique_id=2002650549]
+script = ExtResource("1_gcp6n")
+
+[node name="in0" parent="." unique_id=1841688787 instance=ExtResource("2_ycypk")]
+position = Vector2(-621, -408)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="in1" parent="." unique_id=274440768 instance=ExtResource("2_ycypk")]
+position = Vector2(-621, -24)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="in2" parent="." unique_id=927987631 instance=ExtResource("2_ycypk")]
+position = Vector2(-613, 400)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="out0" parent="." unique_id=2097018757 instance=ExtResource("2_ycypk")]
+position = Vector2(651, -400)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="out1" parent="." unique_id=918113025 instance=ExtResource("2_ycypk")]
+position = Vector2(619, -16)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="out2" parent="." unique_id=1267587990 instance=ExtResource("2_ycypk")]
+position = Vector2(651, 376)
+rotation = -3.1415925
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="base" type="Sprite2D" parent="." unique_id=2016875289]
+texture = ExtResource("3_p0rt2")
+
+[node name="Across" type="Sprite2D" parent="." unique_id=2096905506]
+texture = ExtResource("3_7xwr0")
+
+[node name="up" type="Sprite2D" parent="." unique_id=820072361]
+texture = ExtResource("5_gcp6n")
+
+[node name="draggable" type="Area2D" parent="." unique_id=920224182]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=476959739]
+position = Vector2(-20.5, 0.5)
+shape = SubResource("RectangleShape2D_4rtr7")

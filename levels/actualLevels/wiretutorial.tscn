@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://dh7o1oppfxeyl"]
+
+[ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_01u7t"]
+[ext_resource type="Texture2D" uid="uid://b1kfgdg8aqjn3" path="res://decoration/1.png" id="2_r8ulr"]
+[ext_resource type="PackedScene" uid="uid://c4ttv458hke38" path="res://levels/truthTable.tscn" id="3_rtbfq"]
+[ext_resource type="PackedScene" uid="uid://ch10l0wcklr3a" path="res://doodads/andgate.tscn" id="4_e1etg"]
+[ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="5_1rk0t"]
+[ext_resource type="PackedScene" uid="uid://diraivbxdkd0w" path="res://doodads/levermux2.tscn" id="6_bnckw"]
+[ext_resource type="PackedScene" uid="uid://bvimmyvxk5tou" path="res://doodads/lightbulb.tscn" id="7_reqn4"]
+[ext_resource type="PackedScene" uid="uid://dqsfvl4vbx2x" path="res://doodads/Wire.tscn" id="8_0x6xt"]
+[ext_resource type="Script" uid="uid://b76gdghsiy03t" path="res://levels/oneoff/mousedrag.gd" id="9_imjxh"]
+[ext_resource type="FontFile" uid="uid://b6gktawdexkml" path="res://theme/sitelenselikiwenmonoasuki.ttf" id="10_04xrw"]
+[ext_resource type="Texture2D" uid="uid://cm6gebxp10cun" path="res://decoration/dashedwire.png" id="10_r8ulr"]
+[ext_resource type="PackedScene" uid="uid://dcupfsj2kwfyd" path="res://levels/menubutton.tscn" id="11_agjor"]
+[ext_resource type="Script" uid="uid://g8ncchdlrm37" path="res://levels/oneoff/dashedwire.gd" id="11_rtbfq"]
+[ext_resource type="Script" uid="uid://cfimclbcnmxin" path="res://levels/oneoff/mouseclick.gd" id="13_e1etg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01u7t"]
+texture = ExtResource("10_r8ulr")
+axis_stretch_horizontal = 1
+
+[node name="Level1" type="Node2D" unique_id=1203923865]
+script = ExtResource("1_01u7t")
+
+[node name="bg2" type="TextureRect" parent="." unique_id=1989435234]
+self_modulate = Color(0.23137255, 0, 1, 1)
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r8ulr")
+
+[node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("3_rtbfq")]
+offset_left = 647.0
+offset_top = 290.0
+offset_right = 647.0
+offset_bottom = 290.0
+scale = Vector2(0.5, 0.5)
+lights = [NodePath("../Lightbulb")]
+switches = [NodePath("../lever")]
+values = Array[int]([1, 0])
+reload = true
+
+[node name="TableLabel" parent="TruthTable" index="0" unique_id=382658699]
+offset_top = 176.0
+offset_right = 500.0
+offset_bottom = 520.0
+text = "[table=2][cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+[cell ][center]ilosuno[/center][/cell][cell][table=1][cell][ilo][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][ilo suno][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
+
+[node name="dummy" parent="." unique_id=1857864937 instance=ExtResource("4_e1etg")]
+position = Vector2(-178.99997, 351)
+scale = Vector2(0.1, 0.1)
+
+[node name="0" parent="dummy" index="0" unique_id=1841688787]
+locked = true
+
+[node name="1" parent="dummy" index="1" unique_id=274440768]
+locked = true
+
+[node name="Const1Gate" parent="." unique_id=997263221 instance=ExtResource("5_1rk0t")]
+position = Vector2(-194.99997, 293)
+scale = Vector2(0.1, 0.1)
+
+[node name="1" parent="Const1Gate" index="1" unique_id=1465797355]
+locked = true
+
+[node name="2" parent="Const1Gate" index="2" unique_id=107635713]
+locked = true
+
+[node name="lever" parent="." unique_id=26854987 instance=ExtResource("6_bnckw")]
+position = Vector2(123.00003, 196)
+scale = Vector2(0.15, 0.15)
+nimi = "ilo"
+
+[node name="0" parent="lever" index="0" unique_id=1841688787]
+locked = true
+
+[node name="1" parent="lever" index="1" unique_id=274440768]
+locked = true
+
+[node name="Label" parent="lever" index="3" unique_id=941059217]
+metadata/_edit_use_anchors_ = true
+
+[node name="Lever" parent="lever" index="4" unique_id=2094657652]
+button_pressed = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("7_reqn4")]
+position = Vector2(787.9999, 223.99998)
+scale = Vector2(0.1, 0.1)
+nimi = "ilo suno"
+
+[node name="Wire6" parent="." unique_id=1131736701 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("8_0x6xt")]
+position = Vector2(-99.424965, 196.70001)
+rotation = 2.882755
+scale = Vector2(0.27739036, 0.02)
+term1 = NodePath("../Const1Gate/1")
+term2 = NodePath("../lever/0")
+
+[node name="Wire2" parent="." unique_id=1157537607 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("8_0x6xt")]
+position = Vector2(-102.62497, 278.7)
+rotation = 2.8008466
+scale = Vector2(0.29384443, 0.02)
+term1 = NodePath("../dummy/0")
+term2 = NodePath("../lever/1")
+
+[node name="mouseicon" type="Node2D" parent="." unique_id=1374172813 node_paths=PackedStringArray("term1", "term2", "next")]
+position = Vector2(208, 197)
+script = ExtResource("9_imjxh")
+start = Vector2(205, 193)
+end = Vector2(720, 213)
+start_pause = 0.5
+term1 = NodePath("../lever/2")
+term2 = NodePath("../Lightbulb/0")
+next = NodePath("../mouseicon2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="mouseicon" unique_id=1202719354]
+position = Vector2(4, 14)
+emitting = false
+amount = 50
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+color = Color(0.98039216, 0.77254903, 0.6784314, 1)
+
+[node name="Control" type="Control" parent="mouseicon" unique_id=15145045]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="dotwire" type="Panel" parent="mouseicon/Control" unique_id=1419747977]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 8.0
+offset_right = 19.0
+offset_bottom = 198.0
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_01u7t")
+script = ExtResource("11_rtbfq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="mouseicon/Control" unique_id=1034195997]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.4
+anchor_top = -0.2
+anchor_right = 2.4
+anchor_bottom = 2.425
+offset_right = 1.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_04xrw")
+theme_override_font_sizes/normal_font_size = 73
+text = "🖱️"
+metadata/_edit_use_anchors_ = true
+
+[node name="mouseicon2" type="Node2D" parent="." unique_id=1228410713 node_paths=PackedStringArray("lever", "menu")]
+visible = false
+position = Vector2(112, 197)
+script = ExtResource("13_e1etg")
+lever = NodePath("../lever/Lever")
+menu = NodePath("../menubutton")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="mouseicon2" unique_id=675220451]
+position = Vector2(4, 14)
+emitting = false
+amount = 50
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+color = Color(0.98039216, 0.77254903, 0.6784314, 1)
+
+[node name="Control" type="Control" parent="mouseicon2" unique_id=1743251138]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="mouseicon2/Control" unique_id=14776064]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.4
+anchor_top = -0.2
+anchor_right = 2.4
+anchor_bottom = 2.425
+offset_right = 1.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_04xrw")
+theme_override_font_sizes/normal_font_size = 73
+text = "🖱️"
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="mouseicon2" unique_id=637648123]
+wait_time = 0.75
+
+[node name="menubutton" parent="." unique_id=1729448233 instance=ExtResource("11_agjor")]
+visible = false
+
+[connection signal="edited" from="." to="mouseicon" method="_edited"]
+[connection signal="timeout" from="mouseicon2/Timer" to="mouseicon2" method="click"]
+
+[editable path="TruthTable"]
+[editable path="dummy"]
+[editable path="Const1Gate"]
+[editable path="lever"]
+[editable path="Lightbulb"]

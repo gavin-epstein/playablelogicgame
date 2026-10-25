@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://gdbfh5y65kjb"]
+
+[ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_i8474"]
+[ext_resource type="Texture2D" uid="uid://muakn6m7qalb" path="res://doodads/images/wire1.png" id="2_i8474"]
+[ext_resource type="PackedScene" uid="uid://c4ttv458hke38" path="res://levels/truthTable.tscn" id="3_13tl8"]
+[ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="4_th7jy"]
+[ext_resource type="PackedScene" uid="uid://diraivbxdkd0w" path="res://doodads/levermux2.tscn" id="5_3q1er"]
+[ext_resource type="PackedScene" uid="uid://bvimmyvxk5tou" path="res://doodads/lightbulb.tscn" id="6_2cw5h"]
+[ext_resource type="PackedScene" uid="uid://dcupfsj2kwfyd" path="res://levels/menubutton.tscn" id="7_kvq2p"]
+
+[node name="Level2" type="Node2D" unique_id=1203923865]
+script = ExtResource("1_i8474")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1314362890]
+self_modulate = Color(0, 0.6666667, 1, 1)
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_i8474")
+
+[node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("3_13tl8")]
+offset_left = 655.0
+offset_top = 346.0
+offset_right = 655.0
+offset_bottom = 346.0
+scale = Vector2(0.5, 0.5)
+lights = [NodePath("../Lightbulb")]
+switches = [NodePath("../lever"), NodePath("../lever2")]
+values = Array[int]([1, 0, 0, 0])
+reload = true
+
+[node name="TableLabel" parent="TruthTable" index="0" unique_id=382658699]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 568.0
+offset_bottom = 453.0
+text = "[table=2][cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+[cell ][center]ilosuno[/center][/cell][cell][table=2][cell][wan][/cell][cell][tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][tu][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
+
+[node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
+offset_top = 348.0
+offset_bottom = 504.0
+
+[node name="Const1Gate" parent="." unique_id=997263221 instance=ExtResource("4_th7jy")]
+position = Vector2(85.00001, 261.00003)
+scale = Vector2(0.1, 0.1)
+
+[node name="lever" parent="." unique_id=26854987 instance=ExtResource("5_3q1er")]
+position = Vector2(363.00003, 188)
+scale = Vector2(0.15, 0.15)
+nimi = "wan"
+
+[node name="lever2" parent="." unique_id=2002650549 instance=ExtResource("5_3q1er")]
+position = Vector2(363.00003, 428)
+scale = Vector2(0.15, 0.15)
+nimi = "tu"
+
+[node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("6_2cw5h")]
+position = Vector2(851.9999, 192.00006)
+scale = Vector2(0.15, 0.15)
+nimi = "tu"
+
+[node name="menubutton" parent="." unique_id=1729448233 instance=ExtResource("7_kvq2p")]
+
+[editable path="TruthTable"]

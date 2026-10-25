@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_h2vfb")
 script = ExtResource("2_lo0qp")
 
@@ -17,27 +18,9 @@ script = ExtResource("2_lo0qp")
 layout_mode = 0
 offset_right = 524.0
 offset_bottom = 481.0
+mouse_filter = 2
 bbcode_enabled = true
-text = "[table=2]
-[cell padding=2,2,2,2]ilo pi(openpini) [/cell] 
-[cell ]ilosuno[/cell]
-[cell][table=2]
-[cell][wan][/cell][cell][tu][/cell]
-[cell bg=#aaffee][center]sewi2[/center][/cell][cell  bg=#aaffee][center]sewi2[/center][/cell]
-[cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell]
-[cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell]
-[cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell]
-[/table]
-[/cell]
-[cell padding=-4,0,0,0][table=1]
-[cell][wan][/cell]
-[cell  bg=#ffaaaa][center]wawa[/center][/cell]
-[cell][center]ala[/center][/cell]
-[cell][center]ala[/center][/cell]
-[cell][center]ala[/center][/cell]
-[/table]
-[/cell]
-[/table]"
+text = "ilo suno e ala"
 fit_content = true
 
 [node name="lukinale" type="Button" parent="." unique_id=2116686411]

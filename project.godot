@@ -10,16 +10,26 @@ config_version=5
 
 [application]
 
-config/name="stupidlogicgame"
+config/name="PlayableLogicGame"
+run/main_scene="uid://b1x6050m5c7t1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/image="uid://ddxrfpghlsff1"
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bb768okkgp4ux"
+
+[autoload]
+
+GlobalProgress="*uid://b3c2ku35jumuh"
+LoadSettings="*uid://d0kh3a6db6n1l"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=600
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [input]
 

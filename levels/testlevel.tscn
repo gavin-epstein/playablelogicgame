@@ -10,7 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://baylv78oux2mx" path="res://doodads/const_-1_gate.tscn" id="6_l0kak"]
 [ext_resource type="PackedScene" uid="uid://dqsfvl4vbx2x" path="res://doodads/Wire.tscn" id="9_dyqbh"]
 [ext_resource type="PackedScene" uid="uid://culdlu5wigc25" path="res://doodads/nandnorgate.tscn" id="10_01x3j"]
-[ext_resource type="PackedScene" uid="uid://dqsi7hqmcgeyx" path="res://doodads/hexor.tscn" id="11_chtiu"]
+[ext_resource type="PackedScene" uid="uid://svfvj0gwbfmm" path="res://levels/spawnLimiter.tscn" id="10_hxp06"]
+[ext_resource type="PackedScene" uid="uid://b73g7byut13yr" path="res://areas/spawnbutton.tscn" id="11_hm0jh"]
+[ext_resource type="Texture2D" uid="uid://m5crjbnr2jry" path="res://doodads/images/nandnor.png" id="12_hxp06"]
+[ext_resource type="PackedScene" uid="uid://csdidkxiel78c" path="res://doodads/Rot3Gate.tscn" id="14_it4vp"]
+[ext_resource type="Texture2D" uid="uid://djt0hp31ux24y" path="res://doodads/images/rot3base.png" id="15_0ory1"]
+[ext_resource type="PackedScene" uid="uid://dqsi7hqmcgeyx" path="res://doodads/hexor.tscn" id="16_766f2"]
+[ext_resource type="Texture2D" uid="uid://cpy7k85bf5nlr" path="res://doodads/images/hexagon.png" id="17_hnalp"]
 
 [node name="TestLevel" type="Node2D" unique_id=1203923865]
 script = ExtResource("1_6euoa")
@@ -23,25 +29,35 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_82lur")
 
 [node name="and" parent="." unique_id=2002650549 instance=ExtResource("1_sgvcn")]
-position = Vector2(461, 271)
+position = Vector2(533, 271)
 scale = Vector2(0.1, 0.1)
 
 [node name="Const1Gate" parent="." unique_id=997263221 instance=ExtResource("2_x8lwj")]
-position = Vector2(197, 261)
+position = Vector2(93.000015, 277)
 scale = Vector2(0.1, 0.1)
 
 [node name="lever" parent="." unique_id=26854987 instance=ExtResource("3_x8lwj")]
-position = Vector2(379.00003, 108)
-scale = Vector2(0.15, 0.15)
+position = Vector2(299, 108.00001)
+scale = Vector2(0.1, 0.1)
 nimi = "wan"
 
+[node name="lever3" parent="." unique_id=570877046 instance=ExtResource("3_x8lwj")]
+position = Vector2(203.00003, 484.00003)
+scale = Vector2(0.1, 0.1)
+nimi = "janilo"
+
 [node name="lever2" parent="." unique_id=1083743695 instance=ExtResource("3_x8lwj")]
-position = Vector2(385, 411)
-scale = Vector2(0.15, 0.15)
+position = Vector2(297.00003, 315.00003)
+scale = Vector2(0.1, 0.1)
 nimi = "tu"
 
 [node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("4_t3dhk")]
-position = Vector2(672.99994, 127.99999)
+position = Vector2(672.99994, 231.99998)
+scale = Vector2(0.1, 0.1)
+nimi = "ilo suno"
+
+[node name="Lightbulb2" parent="." unique_id=1407186733 instance=ExtResource("4_t3dhk")]
+position = Vector2(608.99994, 399.99994)
 scale = Vector2(0.1, 0.1)
 nimi = "ilo suno"
 
@@ -65,18 +81,34 @@ position = Vector2(268.00006, 558)
 rotation = -3.070573
 scale = Vector2(0.78829765, 0.02)
 
-[node name="nandnor" parent="." unique_id=48706120 instance=ExtResource("10_01x3j")]
-position = Vector2(625, 249.00002)
-scale = Vector2(0.1, 0.1)
+[node name="SpawnLimiter" parent="." unique_id=949111090 instance=ExtResource("10_hxp06")]
+position = Vector2(859, 13)
+scale = Vector2(0.16000001, 0.16000001)
 
-[node name="hex" parent="." unique_id=1474272201 instance=ExtResource("11_chtiu")]
-position = Vector2(287, 350)
-scale = Vector2(0.07, 0.07)
+[node name="Spawnbutton3" parent="." unique_id=1388948706 node_paths=PackedStringArray("counter") instance=ExtResource("11_hm0jh")]
+position = Vector2(721, 4.0000005)
+scale = Vector2(0.4, 0.4)
+gateScene = ExtResource("10_01x3j")
+icon = ExtResource("12_hxp06")
+counter = NodePath("../SpawnLimiter")
 
-[node name="hex2" parent="." unique_id=444276830 instance=ExtResource("11_chtiu")]
-position = Vector2(174.99998, 446)
-scale = Vector2(0.07, 0.07)
+[node name="Spawnbutton4" parent="." unique_id=1462038167 node_paths=PackedStringArray("counter") instance=ExtResource("11_hm0jh")]
+position = Vector2(585, 4)
+scale = Vector2(0.4, 0.4)
+gateScene = ExtResource("14_it4vp")
+icon = ExtResource("15_0ory1")
+counter = NodePath("../SpawnLimiter")
+
+[node name="Spawnbutton5" parent="." unique_id=1011817495 node_paths=PackedStringArray("counter") instance=ExtResource("11_hm0jh")]
+position = Vector2(449.00006, 4)
+scale = Vector2(0.4, 0.4)
+gateScene = ExtResource("16_766f2")
+icon = ExtResource("17_hnalp")
+counter = NodePath("../SpawnLimiter")
+gatescale = 0.08
 
 [editable path="Const1Gate"]
 [editable path="lever"]
+[editable path="lever3"]
 [editable path="Lightbulb"]
+[editable path="Lightbulb2"]

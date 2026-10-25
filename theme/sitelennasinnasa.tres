@@ -3,17 +3,35 @@
 [ext_resource type="FontFile" uid="uid://b6gktawdexkml" path="res://theme/sitelenselikiwenmonoasuki.ttf" id="1_5ipq8"]
 [ext_resource type="StyleBox" uid="uid://bq8viise6xyhd" path="res://theme/box2.tres" id="2_5ipq8"]
 [ext_resource type="StyleBox" uid="uid://qbwr04jy47cv" path="res://theme/box2_hover.tres" id="2_nswnm"]
+[ext_resource type="StyleBox" uid="uid://dwlcey0qlic0m" path="res://theme/box2_disabled.tres" id="2_wh2ta"]
 [ext_resource type="StyleBox" uid="uid://taebv774dk3i" path="res://theme/box2_pressed.tres" id="4_cyglo"]
+[ext_resource type="StyleBox" uid="uid://bopnj54n2550g" path="res://theme/box3.tres" id="5_enkl1"]
 [ext_resource type="StyleBox" uid="uid://hive2sxubfe6" path="res://theme/box1.tres" id="5_w8vrx"]
+[ext_resource type="Texture2D" uid="uid://cyswaxpjea6tj" path="res://theme/slider.png" id="6_b3xgx"]
+[ext_resource type="StyleBox" uid="uid://dx46h6e88q7u" path="res://theme/offwirebox.tres" id="6_duof1"]
+[ext_resource type="Texture2D" uid="uid://c5j2t7prar3rq" path="res://theme/sliderhighlight.png" id="7_wnt5i"]
+[ext_resource type="StyleBox" uid="uid://db7wbf1bu4ebo" path="res://theme/onwirebox.tres" id="8_2wb4u"]
 
 [resource]
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("1_5ipq8")
+Button/styles/disabled = ExtResource("2_wh2ta")
 Button/styles/hover = ExtResource("2_nswnm")
 Button/styles/normal = ExtResource("2_5ipq8")
 Button/styles/pressed = ExtResource("4_cyglo")
-RichTextLabel/colors/default_color = Color(0.18177179, 8.606981e-05, 0.22534135, 1)
+HSlider/icons/grabber = ExtResource("6_b3xgx")
+HSlider/icons/grabber_highlight = ExtResource("7_wnt5i")
+HSlider/styles/grabber_area = ExtResource("8_2wb4u")
+HSlider/styles/grabber_area_highlight = ExtResource("8_2wb4u")
+HSlider/styles/slider = ExtResource("6_duof1")
+ItemList/colors/font_color = Color(0.18039216, 0, 0.22352941, 1)
+ItemList/font_sizes/font_size = 48
+ItemList/fonts/font = ExtResource("1_5ipq8")
+ItemList/styles/panel = ExtResource("5_w8vrx")
+Panel/styles/panel = ExtResource("5_enkl1")
+RichTextLabel/colors/default_color = Color(0.18039216, 0, 0.22352941, 1)
 RichTextLabel/colors/font_outline_color = Color(1, 0.93333334, 1, 1)
+RichTextLabel/constants/vertical_alignment = 1
 RichTextLabel/font_sizes/normal_font_size = 56
 RichTextLabel/fonts/bold_font = ExtResource("1_5ipq8")
 RichTextLabel/fonts/normal_font = ExtResource("1_5ipq8")

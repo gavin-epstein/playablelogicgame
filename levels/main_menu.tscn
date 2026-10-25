@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://b1x6050m5c7t1"]
+
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="1_0ettg"]
+[ext_resource type="Script" uid="uid://c6yulqlstq6je" path="res://levels/main_menu.gd" id="2_6flho"]
+[ext_resource type="Script" uid="uid://gppc7xusffkv" path="res://levels/LevelSelect.gd" id="2_duh7t"]
+[ext_resource type="Texture2D" uid="uid://bcfe3x7vwwjch" path="res://decoration/3.png" id="2_nwbki"]
+[ext_resource type="PackedScene" uid="uid://ddt7t3w2dowjx" path="res://levels/level_button.tscn" id="3_6flho"]
+[ext_resource type="Script" uid="uid://430lpbaeqv34" path="res://levels/level_button.gd" id="4_ofye2"]
+[ext_resource type="Script" uid="uid://bd4lrjvv6rtld" path="res://sound/volumeslider.gd" id="5_3ye4h"]
+
+[node name="MainMenu" type="Control" unique_id=239555814]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_0ettg")
+script = ExtResource("2_6flho")
+
+[node name="bg" type="TextureRect" parent="." unique_id=2134591273]
+self_modulate = Color(0.60784316, 1, 0.6, 1)
+z_index = -1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nwbki")
+
+[node name="Background" type="Node2D" parent="." unique_id=1015457271]
+z_index = -1
+
+[node name="levelsbg" type="Panel" parent="." unique_id=1055608988]
+layout_mode = 0
+offset_left = 424.99997
+offset_top = 5.0000153
+offset_right = 3089.9998
+offset_bottom = 2979.9998
+scale = Vector2(0.2, 0.2)
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1741388682]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 20.0
+offset_right = 941.0
+offset_bottom = 587.0
+theme = ExtResource("1_0ettg")
+columns = 5
+script = ExtResource("2_duh7t")
+reload = true
+
+[node name="Button1" type="Button" parent="GridContainer" unique_id=820382413 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "wan"
+script = ExtResource("4_ofye2")
+levelnumber = 1
+
+[node name="Button2" type="Button" parent="GridContainer" unique_id=1326033764 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "tu"
+script = ExtResource("4_ofye2")
+levelnumber = 2
+
+[node name="Button3" type="Button" parent="GridContainer" unique_id=928727467 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "wan&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 3
+
+[node name="Button4" type="Button" parent="GridContainer" unique_id=1454361653 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "tu&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 4
+
+[node name="Button10" type="Button" parent="GridContainer" unique_id=856232461 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka"
+script = ExtResource("4_ofye2")
+levelnumber = 5
+
+[node name="Button11" type="Button" parent="GridContainer" unique_id=1958584515 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&wan"
+script = ExtResource("4_ofye2")
+levelnumber = 6
+
+[node name="Button15" type="Button" parent="GridContainer" unique_id=1791675619 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 7
+
+[node name="Button16" type="Button" parent="GridContainer" unique_id=486457576 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&wan&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 8
+
+[node name="Button17" type="Button" parent="GridContainer" unique_id=543098799 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&tu&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 9
+
+[node name="Button18" type="Button" parent="GridContainer" unique_id=208043495 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka"
+script = ExtResource("4_ofye2")
+levelnumber = 10
+
+[node name="Button19" type="Button" parent="GridContainer" unique_id=1207265574 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&wan"
+script = ExtResource("4_ofye2")
+levelnumber = 11
+
+[node name="Button20" type="Button" parent="GridContainer" unique_id=1957530561 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 12
+
+[node name="Button21" type="Button" parent="GridContainer" unique_id=974411278 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&wan&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 13
+
+[node name="Button22" type="Button" parent="GridContainer" unique_id=84644408 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&tu&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 14
+
+[node name="Button23" type="Button" parent="GridContainer" unique_id=1497389537 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&luka"
+script = ExtResource("4_ofye2")
+levelnumber = 15
+
+[node name="Button24" type="Button" parent="GridContainer" unique_id=855826616 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&luka&wan"
+script = ExtResource("4_ofye2")
+levelnumber = 16
+
+[node name="Button25" type="Button" parent="GridContainer" unique_id=755202890 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&luka&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 17
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1691486507]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 8.0
+offset_right = 406.0
+offset_bottom = 223.0
+bbcode_enabled = true
+text = "[center]musi pi (ilo sona)
+pi (ken musi mute e ni)"
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1025504833]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 235.0
+offset_right = 406.0
+offset_bottom = 316.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center] jan[kasi.pilin.n] li pali e ni[/center]"
+vertical_alignment = 1
+
+[node name="settings2" type="Panel" parent="." unique_id=1911270067]
+layout_mode = 0
+offset_left = 26.000004
+offset_top = 325.00003
+offset_right = 1965.9998
+offset_bottom = 1279.9999
+scale = Vector2(0.2, 0.2)
+
+[node name="settings" type="Panel" parent="." unique_id=817140995]
+layout_mode = 0
+offset_left = 26.000004
+offset_top = 325.00003
+offset_right = 1965.9998
+offset_bottom = 1279.9999
+scale = Vector2(0.2, 0.2)
+
+[node name="sfxSlider" type="HSlider" parent="settings" unique_id=1197985112]
+layout_mode = 0
+offset_left = 639.99994
+offset_top = 215.0
+offset_right = 870.99994
+offset_bottom = 239.0
+scale = Vector2(5, 5)
+max_value = 1.0
+step = 0.005
+script = ExtResource("5_3ye4h")
+audio_bus_name = "UI"
+
+[node name="sfx" type="RichTextLabel" parent="settings/sfxSlider" unique_id=4523282]
+layout_mode = 0
+offset_left = -108.0
+offset_top = -14.0
+offset_right = 86.0
+offset_bottom = 104.0
+scale = Vector2(0.5, 0.5)
+bbcode_enabled = true
+text = "kalamakalama"
+
+[node name="musicslider2" type="HSlider" parent="settings" unique_id=1916021567]
+layout_mode = 0
+offset_left = 634.99994
+offset_top = 574.9999
+offset_right = 864.99994
+offset_bottom = 598.9999
+scale = Vector2(5, 5)
+max_value = 1.0
+step = 0.005
+script = ExtResource("5_3ye4h")
+audio_bus_name = "Music"
+
+[node name="sfx" type="RichTextLabel" parent="settings/musicslider2" unique_id=1193103877]
+layout_mode = 0
+offset_left = -108.0
+offset_top = -14.0
+offset_right = 86.0
+offset_bottom = 104.0
+scale = Vector2(0.5, 0.5)
+bbcode_enabled = true
+text = "kalamamusi"
+
+[connection signal="tree_exiting" from="settings/sfxSlider" to="settings/sfxSlider" method="_on_tree_exiting"]

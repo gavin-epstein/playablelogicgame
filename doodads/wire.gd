@@ -1,5 +1,5 @@
 @tool
-class_name Wire extends Node2D
+class_name Wire extends Doodad
 var value = 0
 var visual_only = false
 		
@@ -20,7 +20,7 @@ var visual_only = false
 		if Engine.is_editor_hint():
 			connect_wire_editor(term)
 		render()
-const MAX_UPDATES_PER_FRAME = 5
+const MAX_UPDATES_PER_FRAME = 128
 var explosionscene =  preload("res://doodads/explosion.tscn");
 var calcs = 0
 var exploded  =false
@@ -37,7 +37,6 @@ func connect_wire_editor(term):
 func set_value(val):
 	if !exploded and calcs < MAX_UPDATES_PER_FRAME and not Engine.is_editor_hint(): 
 		if val!=value:
-			calcs+=1
 			value = val
 			if val == 0:
 				$Wire0.visible = true
@@ -52,12 +51,16 @@ func set_value(val):
 				$Wire1.visible = false
 				$"Wire-1".visible = true
 		if not visual_only:
+			calcs+=1
+			#if term2==null or term1.get_parent()!=term2.get_parent():
 			term1.set_value(value)
 			if term2 !=null:
 				term2.set_value(value)
-	elif !exploded and calcs > MAX_UPDATES_PER_FRAME:
+			
+					
+	elif !exploded and calcs >= MAX_UPDATES_PER_FRAME:
 		explode()
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		calcs = 0
 		if term1 == null:
@@ -69,8 +72,10 @@ func _ready() -> void:
 		input_changed()
 		term1.wire = self
 		term2.wire = self
-		term1.changed.connect(input_changed)
-		term2.changed.connect(input_changed)
+		if not term1.changed.is_connected(input_changed):
+			term1.changed.connect(input_changed)
+		if not term2.changed.is_connected(input_changed):
+			term2.changed.connect(input_changed)
 func _input(event: InputEvent) -> void:
 	if Engine.is_editor_hint():
 		return
@@ -92,9 +97,11 @@ func _input(event: InputEvent) -> void:
 						delete_wire()
 					else:
 						term.connect_wire(self,"term2")
-						input_changed()
-						render()
 						get_parent().edited.emit()
+						render()
+						input_changed()
+						
+						
 func render():
 	if Engine.is_editor_hint() and term1 ==null:
 		return
@@ -109,6 +116,11 @@ func render():
 	self.global_rotation = (t1-t2).angle()
 
 func input_changed():
+	if get_parent() is Level:
+		get_parent().add_to_update_queue(self)
+	else:
+		print("Level not found by wire" + name)
+func process_from_queue():		
 		var val = 0
 		if term1!=null:
 			val+= term1.get_value()
@@ -117,6 +129,9 @@ func input_changed():
 		set_value(clampi(val,-1,1))
 
 func explode():
+	if term1!=null and term2 !=null and term1.get_parent()==term2.get_parent():
+		term1.get_parent()._explode()
+		return
 	var explosionsprite:Sprite2D = explosionscene.instantiate()
 	add_child(explosionsprite)
 	exploded = true
@@ -125,11 +140,13 @@ func delete_wire():
 	exploded = true
 	if term1!=null:
 		term1.wire = null
-		term1.input_changed()
 	if term2!=null:
 		term2.wire = null
+	get_parent().edited.emit()
+	if term1!=null:
+		term1.input_changed()
+	if term2!=null:
 		term2.input_changed()
-		get_parent().edited.emit()
 	queue_free()
 	
 func get_other_end(term:WireTerminal)->WireTerminal:
@@ -140,3 +157,19 @@ func get_other_end(term:WireTerminal)->WireTerminal:
 	else:
 		print("get_other end invalid")
 		return null
+
+func save()->Dictionary:
+	var d = {}
+	d["term1"] = term1.get_path()
+	d["term2"] = term2.get_path()
+	d["path"] = get_path()
+	return d
+
+func load_from_save(d:Dictionary):
+	term1 = get_node(d["term1"])
+	if term1 == null:
+		print(d["term1"])
+	term1.connect_wire(self)
+	term2 = get_node(d["term2"])
+	if term2!=null:
+		term2.connect_wire(self, "term2")

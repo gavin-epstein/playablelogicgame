@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bpwmhgece3c3e"]
+
+[ext_resource type="Script" uid="uid://cdgfrxiwihgdj" path="res://levels/oneoff/autowin.gd" id="1_j180c"]
+[ext_resource type="Texture2D" uid="uid://cr3h5r6qdc5gx" path="res://decoration/2.png" id="2_g6lhk"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="3_yhcar"]
+[ext_resource type="Script" uid="uid://did6y7oehbsq4" path="res://levels/oneoff/backandforth.gd" id="6_v6f8g"]
+[ext_resource type="Script" uid="uid://c6kmfnjab7xi6" path="res://levels/oneoff/noquit.gd" id="7_08gh6"]
+[ext_resource type="PackedScene" uid="uid://dcupfsj2kwfyd" path="res://levels/menubutton.tscn" id="8_nqlli"]
+
+[node name="EndScreen" type="Node2D" unique_id=1262805198]
+script = ExtResource("1_j180c")
+
+[node name="bg" type="TextureRect" parent="." unique_id=246135187]
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_g6lhk")
+flip_v = true
+
+[node name="Control" type="Control" parent="." unique_id=1008448961]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_yhcar")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control" unique_id=1955353625]
+layout_mode = 0
+offset_left = 93.0
+offset_right = 842.0
+offset_bottom = 493.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "
+
+
+	sina li pini e utala ale. ni la kepeken sona mute sinakepeken pali wawa sina. pona&mute a
+
+lon tenpo ni la musi ni e lili. tenpo kama mi li alasa suli e musi ni. tan ni la mi li toki tawa sina.  lon sina musi e musi ni la sina li pilin e seme "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=922928777]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 20.0
+offset_right = 686.0
+offset_bottom = 143.0
+bbcode_enabled = true
+text = "[center]pini pona a!!![/center]"
+script = ExtResource("6_v6f8g")
+amount = 150.0
+center = 255.0
+
+[node name="Button2" type="Button" parent="Control" unique_id=760730175]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 463.0
+offset_right = 607.0
+offset_bottom = 579.0
+text = "o tawa weka"
+script = ExtResource("7_08gh6")
+
+[node name="menubutton" parent="." unique_id=1729448233 instance=ExtResource("8_nqlli")]
+
+[node name="Button2" parent="menubutton" index="1" unique_id=493114776]
+visible = false
+
+[connection signal="pressed" from="Control/Button2" to="Control/Button2" method="_on_pressed"]
+
+[editable path="menubutton"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b73g7byut13yr"]
+
+[ext_resource type="Script" uid="uid://rtp1pw2cdv5m" path="res://areas/spawnbutton.gd" id="1_tpy40"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="1_y2fmb"]
+
+[node name="Spawnbutton" type="Node2D" unique_id=1388948706]
+script = ExtResource("1_tpy40")
+
+[node name="Button" type="Button" parent="." unique_id=1737114504]
+offset_right = 318.0
+offset_bottom = 320.0
+theme = ExtResource("1_y2fmb")
+
+[node name="TextureRect" type="TextureRect" parent="Button" unique_id=1900281743]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 30.0
+offset_right = 288.0
+offset_bottom = 289.0
+mouse_filter = 2
+expand_mode = 4
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

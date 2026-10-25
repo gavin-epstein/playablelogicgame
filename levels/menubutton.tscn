@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dcupfsj2kwfyd"]
+
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="1_bdpai"]
+[ext_resource type="Script" uid="uid://5mm0lb6fkrcm" path="res://levels/menubutton.gd" id="2_h1tqe"]
+[ext_resource type="Script" uid="uid://c3aqt3enwy0k6" path="res://sound/sfxnot3d.gd" id="3_bgd6b"]
+[ext_resource type="AudioStream" uid="uid://um06150rfq52" path="res://sound/powerUp.wav" id="3_txabm"]
+[ext_resource type="AudioStream" uid="uid://dnb28v1vfvx20" path="res://sound/honk.wav" id="5_1k47l"]
+[ext_resource type="Script" uid="uid://cecca1faos8kr" path="res://levels/resetbutton.gd" id="5_s7r8e"]
+
+[node name="menubutton" type="Control" unique_id=1729448233]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bdpai")
+
+[node name="Button" type="Button" parent="." unique_id=595553815]
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 129.0
+scale = Vector2(0.75, 0.75)
+text = "☰"
+script = ExtResource("2_h1tqe")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button" unique_id=361182335]
+stream = ExtResource("3_txabm")
+pitch_scale = 0.82
+bus = &"UI"
+script = ExtResource("3_bgd6b")
+
+[node name="Button2" type="Button" parent="." unique_id=493114776]
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 0
+offset_left = 80.0
+offset_right = 176.0
+offset_bottom = 115.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 40
+text = "⭯"
+script = ExtResource("5_s7r8e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button2" unique_id=1451729028]
+stream = ExtResource("5_1k47l")
+bus = &"UI"
+script = ExtResource("3_bgd6b")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

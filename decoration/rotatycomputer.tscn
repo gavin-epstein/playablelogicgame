@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cbls7cerm8od3"]
+
+[ext_resource type="Script" uid="uid://bwar62ucxf2eq" path="res://decoration/compustation.gd" id="1_hln7c"]
+[ext_resource type="PackedScene" uid="uid://cgqfwdetbr1ma" path="res://decoration/compustation.glb" id="2_p4n6u"]
+
+[sub_resource type="Environment" id="Environment_h1g4n"]
+background_mode = 4
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6e5x"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="SubViewport" type="SubViewport" unique_id=262210885]
+handle_input_locally = false
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1882283898]
+transform = Transform3D(1, 0, 0, 0, 0.9582075, 0.28607434, 0, -0.28607434, 0.9582074, -0.04033494, 0.17509454, 0.52824247)
+environment = SubResource("Environment_h1g4n")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=346369495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9201095, 0.63575816)
+light_color = Color(1, 0.9626667, 0.72, 1)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=814607745]
+script = ExtResource("1_hln7c")
+
+[node name="Node3D" type="Node3D" parent="Node3D" unique_id=1446730594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20915264, 0, 0)
+
+[node name="compustation" parent="Node3D/Node3D" unique_id=1790954623 instance=ExtResource("2_p4n6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21769255, -0.49537104, 0.39330542)
+
+[node name="screen_001" parent="Node3D/Node3D/compustation" index="4" unique_id=1392191910]
+surface_material_override/0 = SubResource("StandardMaterial3D_n6e5x")
+
+[editable path="Node3D/Node3D/compustation"]

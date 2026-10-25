@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cek12g7uaqrdu" path="res://doodads/images/levermux2on.png" id="3_y05s2"]
 [ext_resource type="Texture2D" uid="uid://c8w6ul4qq3p2j" path="res://doodads/images/levermux2off.png" id="4_ivne1"]
 [ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="5_ygeu7"]
+[ext_resource type="AudioStream" uid="uid://j3rcq8qnb12y" path="res://sound/click2.wav" id="6_rpcdd"]
+[ext_resource type="Script" uid="uid://c3aqt3enwy0k6" path="res://sound/sfxnot3d.gd" id="7_e431y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygeu7"]
 size = Vector2(774, 1235)
@@ -62,4 +64,7 @@ texture_pressed = ExtResource("4_ivne1")
 position = Vector2(6, 83.5)
 shape = SubResource("RectangleShape2D_ygeu7")
 
-[connection signal="toggled" from="Lever" to="." method="_on_lever_toggled"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=217312289]
+stream = ExtResource("6_rpcdd")
+bus = &"UI"
+script = ExtResource("7_e431y")

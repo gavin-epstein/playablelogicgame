@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://svfvj0gwbfmm"]
+
+[ext_resource type="Script" uid="uid://cbxodq7wqx712" path="res://levels/spawn_limiter.gd" id="1_s2cek"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="2_g745m"]
+
+[node name="SpawnLimiter" type="Node2D" unique_id=949111090]
+script = ExtResource("1_s2cek")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1000198589]
+offset_right = 267.0
+offset_bottom = 124.0
+theme = ExtResource("2_g745m")
+text = "luka&wan&tu/luka&luka"

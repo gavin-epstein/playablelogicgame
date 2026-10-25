@@ -1,0 +1,20 @@
+wiretutorial
+andintro
+whatisgoingon
+orintro2
+splitand
+constintro1
+constintro2
+switchand
+orlatch
+thinkingwithlatches
+nandnorintro
+explosionintro
+#nandorlatch -revisit with sequence input?
+makexor1
+makexor2
+rot3intro
+rot3latch
+rot3splitand
+#postmoonlevels
+#andwithmoon
