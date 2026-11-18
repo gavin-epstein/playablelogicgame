@@ -2,6 +2,7 @@
 class_name Wire extends Doodad
 var value = 0
 var visual_only = false
+
 		
 @export var term1:WireTerminal:
 	set(term):
@@ -20,6 +21,11 @@ var visual_only = false
 		if Engine.is_editor_hint():
 			connect_wire_editor(term)
 		render()
+@export var rerender = false:
+	set(val):
+		if Engine.is_editor_hint():
+			rerender = true
+			render()
 const MAX_UPDATES_PER_FRAME = 128
 var explosionscene =  preload("res://doodads/explosion.tscn");
 var calcs = 0
@@ -114,7 +120,10 @@ func render():
 	self.global_position = .5*(t1+t2)
 	self.global_scale.x = (t1-t2).length()/1000
 	self.global_rotation = (t1-t2).angle()
-
+	#if self.visual_only:
+		#modulate = Color(0,1,1)
+	#else:
+		#modulate = Color(1,1,1)
 func input_changed():
 	if get_parent() is Level:
 		get_parent().add_to_update_queue(self)
@@ -173,3 +182,4 @@ func load_from_save(d:Dictionary):
 	term2 = get_node(d["term2"])
 	if term2!=null:
 		term2.connect_wire(self, "term2")
+		render()

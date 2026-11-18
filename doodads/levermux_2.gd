@@ -4,13 +4,13 @@ func _ready() -> void:
 	super._ready()
 	$Lever.toggled.connect(_on_lever_toggled)
 	if $Lever.button_pressed:
-		state = 0
+		state = -1
 	else:
 		state = 1
 
 func set_state(s:int):
 	state = s
-	if state == 0:
+	if state == -1:
 		$Lever.button_pressed = true
 	elif state == 1:
 		$Lever.button_pressed = false
@@ -26,7 +26,7 @@ func calculate():
 
 func _on_lever_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		state = 0
+		state = -1
 	else:
 		state = 1
 	$AudioStreamPlayer.play_randomized()

@@ -7,14 +7,24 @@ constintro1
 constintro2
 switchand
 orlatch
+andlatch
 thinkingwithlatches
 nandnorintro
 explosionintro
 #nandorlatch -revisit with sequence input?
 makexor1
 makexor2
+moonintro
+andwithmoon
+moonfilter
+moonxor
 rot3intro
 rot3latch
 rot3splitand
-#postmoonlevels
-#andwithmoon
+hammernot
+hammerlatch
+hammerequal
+hammersnakesplitter
+chainhammer
+hammersnakerotation
+#hammer memory cell sequence input

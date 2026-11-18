@@ -44,7 +44,7 @@ reload = true
 offset_top = 176.0
 offset_right = 500.0
 offset_bottom = 520.0
-text = "[table=2][cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
 [cell ][center]ilosuno[/center][/cell][cell][table=1][cell][ilo][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][ilo suno][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
 
 [node name="dummy" parent="." unique_id=1857864937 instance=ExtResource("4_e1etg")]
@@ -70,7 +70,7 @@ locked = true
 [node name="lever" parent="." unique_id=26854987 instance=ExtResource("6_bnckw")]
 position = Vector2(123.00003, 196)
 scale = Vector2(0.15, 0.15)
-nimi = "ilo"
+nimi = "wan"
 
 [node name="0" parent="lever" index="0" unique_id=1841688787]
 locked = true
@@ -88,7 +88,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("7_reqn4")]
 position = Vector2(787.9999, 223.99998)
 scale = Vector2(0.1, 0.1)
-nimi = "ilo suno"
+nimi = "tu"
 
 [node name="Wire6" parent="." unique_id=1131736701 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("8_0x6xt")]
 position = Vector2(-99.424965, 196.70001)

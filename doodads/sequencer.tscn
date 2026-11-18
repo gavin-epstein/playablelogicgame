@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://c6qdctiyq7tmc"]
+
+[ext_resource type="Script" uid="uid://bq5h6luybup0m" path="res://doodads/sequencer.gd" id="1_m80bb"]
+[ext_resource type="Script" uid="uid://dvwdmj8xcb8iw" path="res://doodads/train.gd" id="2_aqc7k"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="2_c34h2"]
+[ext_resource type="Texture2D" uid="uid://s6tjk2p6tync" path="res://doodads/images/rail.png" id="2_m58vp"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_m80bb"]
+[ext_resource type="Texture2D" uid="uid://wo7qu6a8ulmx" path="res://doodads/images/train.png" id="2_nnqs3"]
+[ext_resource type="Texture2D" uid="uid://dp66oqgssae1v" path="res://decoration/smoke.png" id="3_omb84"]
+[ext_resource type="Texture2D" uid="uid://md28e705c4ps" path="res://doodads/images/terminal.png" id="3_rqy5r"]
+[ext_resource type="PackedScene" uid="uid://dkufa6shviqm7" path="res://doodads/railsegment.tscn" id="3_w86w5"]
+[ext_resource type="Texture2D" uid="uid://cjemhybvhg4gf" path="res://doodads/images/house1.png" id="5_hm2ri"]
+[ext_resource type="Texture2D" uid="uid://sp5xauhgallv" path="res://doodads/images/house2.png" id="6_borj8"]
+[ext_resource type="Script" uid="uid://b0tmkrv41tycl" path="res://doodads/railsegment.gd" id="8_nnqs3"]
+[ext_resource type="Script" uid="uid://byaaa6an6nbmb" path="res://doodads/terminal.gd" id="13_2iwq2"]
+
+[sub_resource type="Gradient" id="Gradient_omb84"]
+colors = PackedColorArray(1, 1, 1, 1, 0.003921569, 0.003921569, 0.003921569, 0.49803922)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rtr7"]
+size = Vector2(837, 3400)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m58vp"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="sequencetrain" type="Node2D" unique_id=2002650549]
+script = ExtResource("1_m80bb")
+length = 2
+
+[node name="Train" type="Node2D" parent="." unique_id=1912274269]
+z_index = 1
+position = Vector2(0, -850)
+script = ExtResource("2_aqc7k")
+
+[node name="Terminal" type="Sprite2D" parent="Train" unique_id=1203758527]
+position = Vector2(89, -6)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rqy5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Train" unique_id=1084738353]
+position = Vector2(-32.499985, -25.99997)
+scale = Vector2(1.495, 1.472)
+texture = ExtResource("2_nnqs3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Train" unique_id=929876498]
+position = Vector2(-16, -304)
+scale = Vector2(0.1, 0.1)
+emitting = false
+amount = 12
+texture = ExtResource("3_omb84")
+lifetime = 2.0
+direction = Vector2(0, -1)
+spread = 16.93
+gravity = Vector2(0, 0)
+initial_velocity_min = 186.54
+initial_velocity_max = 474.01
+angle_max = 380.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_omb84")
+
+[node name="draggable" type="Area2D" parent="." unique_id=920224182]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=476959739]
+position = Vector2(-28.5, 425)
+shape = SubResource("RectangleShape2D_4rtr7")
+
+[node name="House1" type="Node2D" parent="." unique_id=1763536648]
+position = Vector2(0, -850)
+
+[node name="Panel" type="Panel" parent="House1" unique_id=1075977627]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -296.0
+offset_top = -237.0
+offset_right = 244.0
+offset_bottom = 406.0
+theme = ExtResource("2_c34h2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_m58vp")
+
+[node name="TextureRect3" type="TextureRect" parent="House1" unique_id=107964359]
+z_index = 2
+offset_left = -465.0
+offset_top = -775.0
+offset_right = 424.0
+offset_bottom = 255.0
+texture = ExtResource("5_hm2ri")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="House1" unique_id=168003827]
+z_index = 2
+offset_left = -549.0
+offset_top = -496.0
+offset_right = 521.0
+offset_bottom = 567.0
+texture = ExtResource("5_hm2ri")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="House2" type="Node2D" parent="." unique_id=1622528927]
+position = Vector2(0, 1700)
+
+[node name="Panel" type="Panel" parent="House2" unique_id=1632023866]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -296.0
+offset_top = -237.0
+offset_right = 244.0
+offset_bottom = 406.0
+theme = ExtResource("2_c34h2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_m58vp")
+
+[node name="TextureRect2" type="TextureRect" parent="House2" unique_id=453183623]
+offset_left = -452.0
+offset_top = -444.0
+offset_right = 398.0
+offset_bottom = 406.0
+texture = ExtResource("2_m58vp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="House2" unique_id=1214604653]
+z_index = 2
+offset_left = -604.0
+offset_top = -690.0
+offset_right = 576.0
+offset_bottom = 453.0
+texture = ExtResource("6_borj8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="out" parent="." unique_id=1841688787 instance=ExtResource("2_m80bb")]
+z_index = 1
+position = Vector2(578, -850)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="Button" type="Button" parent="." unique_id=1079433655]
+offset_left = -1006.0
+offset_top = -1235.0
+offset_right = -766.5
+offset_bottom = -902.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_c34h2")
+theme_override_font_sizes/font_size = 160
+text = "tawa"
+
+[node name="loje2" type="Node2D" parent="." unique_id=113837451 instance=ExtResource("3_w86w5")]
+script = ExtResource("8_nnqs3")
+
+[node name="Terminal5" type="Node2D" parent="." unique_id=1424777732 instance=ExtResource("2_m80bb")]
+position = Vector2(-708, 0)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("13_2iwq2")
+
+[node name="laso" type="Node2D" parent="." unique_id=140771785 instance=ExtResource("3_w86w5")]
+position = Vector2(0, 850)
+script = ExtResource("8_nnqs3")
+
+[node name="Terminal6" type="Node2D" parent="." unique_id=1063215629 instance=ExtResource("2_m80bb")]
+position = Vector2(-708, 850)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("13_2iwq2")
+
+[connection signal="pressed" from="Button" to="." method="test_train"]

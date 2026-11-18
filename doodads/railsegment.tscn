@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dkufa6shviqm7"]
+
+[ext_resource type="Script" uid="uid://b0tmkrv41tycl" path="res://doodads/railsegment.gd" id="1_54cve"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="1_pe5h3"]
+[ext_resource type="Texture2D" uid="uid://s6tjk2p6tync" path="res://doodads/images/rail.png" id="2_54cve"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnqs3"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_borj8"]
+bg_color = Color(1, 1, 1, 0.3764706)
+
+[node name="Segment" type="Node2D" unique_id=113837451]
+script = ExtResource("1_54cve")
+
+[node name="Panel" type="Panel" parent="." unique_id=1611478112]
+offset_left = -452.0
+offset_top = -444.0
+offset_right = 398.0
+offset_bottom = 406.0
+mouse_filter = 2
+theme = ExtResource("1_pe5h3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnqs3")
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1015914509]
+layout_mode = 0
+offset_right = 850.0
+offset_bottom = 850.0
+mouse_filter = 2
+texture = ExtResource("2_54cve")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=837579696]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -1.0
+offset_right = 852.0
+offset_bottom = 850.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 475
+theme_override_styles/normal = SubResource("StyleBoxFlat_borj8")
+text = "loje"
+horizontal_alignment = 1
+vertical_alignment = 1

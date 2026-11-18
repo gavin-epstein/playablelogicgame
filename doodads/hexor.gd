@@ -9,6 +9,7 @@ func _ready() -> void:
 	if get_parent() is Level:
 		get_parent().edited.connect(reconfigure)
 	reconfigure()
+	calculate()
 	
 func _process(_delta: float) -> void:
 	super(_delta)
@@ -41,6 +42,10 @@ func set_recursive(val:int):
 		if node.wire!=null:
 			node.wire.set_value(val)
 		var supress =  node in node.get_parent().outputs.keys()
+		#if supress:
+			#node.modulate = Color(0,1,0)
+		#else:
+			#node.modulate = Color(1,1,1)
 		node.set_value(val, supress)
 	
 func reconfigure():

@@ -1,6 +1,6 @@
 @abstract class_name Lever extends Gate
 @export var nimi:String
-var state=1
+@export var state=1
 @warning_ignore("unused_signal") signal statechanged 
 
 func _ready() -> void:

@@ -62,7 +62,7 @@ reload = true
 offset_top = -2.0
 offset_right = 600.0
 offset_bottom = 547.0
-text = "[table=2][cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
 [cell ][center]ilosuno[/center][/cell][cell][table=2][cell][wan][/cell][cell][tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][ilo suno][/cell][cell][center]ala[/center][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
 
 [node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
@@ -140,7 +140,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("9_8ck7b")]
 position = Vector2(787.9999, 223.99998)
 scale = Vector2(0.1, 0.1)
-nimi = "ilo suno"
+nimi = "tu&wan"
 
 [node name="Wire6" parent="." unique_id=1131736701 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("11_qxf50")]
 position = Vector2(-100.69997, 170.5)

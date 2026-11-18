@@ -9,6 +9,7 @@ script = ExtResource("1_tpy40")
 [node name="Button" type="Button" parent="." unique_id=1737114504]
 offset_right = 318.0
 offset_bottom = 320.0
+mouse_filter = 1
 theme = ExtResource("1_y2fmb")
 
 [node name="TextureRect" type="TextureRect" parent="Button" unique_id=1900281743]

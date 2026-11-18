@@ -39,7 +39,7 @@ offset_left = 64.0
 offset_top = 140.0
 offset_right = 564.0
 offset_bottom = 498.0
-text = "[table=2][cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
 [cell ][center]ilosuno[/center][/cell][cell][table=1][cell][wan][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][ilo suno][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][/table][/cell]"
 
 [node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
@@ -91,7 +91,7 @@ position = Vector2(6.000122, 83.5)
 [node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("7_6l18n")]
 position = Vector2(787.9999, 223.99998)
 scale = Vector2(0.1, 0.1)
-nimi = "ilo suno"
+nimi = "tu"
 
 [node name="Wire6" parent="." unique_id=1131736701 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("8_tqdmd")]
 position = Vector2(-100.69996, 222.5)
@@ -131,5 +131,4 @@ locked = true
 [editable path="dummy"]
 [editable path="Const1Gate"]
 [editable path="lever"]
-[editable path="Lightbulb"]
 [editable path="hex"]

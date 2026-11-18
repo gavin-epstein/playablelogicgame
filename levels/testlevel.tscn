@@ -17,6 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://djt0hp31ux24y" path="res://doodads/images/rot3base.png" id="15_0ory1"]
 [ext_resource type="PackedScene" uid="uid://dqsi7hqmcgeyx" path="res://doodads/hexor.tscn" id="16_766f2"]
 [ext_resource type="Texture2D" uid="uid://cpy7k85bf5nlr" path="res://doodads/images/hexagon.png" id="17_hnalp"]
+[ext_resource type="PackedScene" uid="uid://k5cfrim1bu0v" path="res://doodads/levermux3.tscn" id="18_hnalp"]
+[ext_resource type="PackedScene" uid="uid://dvhi6xurjwqdu" path="res://doodads/hammerdiode.tscn" id="19_kam1y"]
+[ext_resource type="PackedScene" uid="uid://c6qdctiyq7tmc" path="res://doodads/sequencer.tscn" id="20_hx3fy"]
+[ext_resource type="PackedScene" uid="uid://dkufa6shviqm7" path="res://doodads/railsegment.tscn" id="21_n5inw"]
+[ext_resource type="Script" uid="uid://b0tmkrv41tycl" path="res://doodads/railsegment.gd" id="22_ms3em"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="23_ljyin"]
+[ext_resource type="Script" uid="uid://byaaa6an6nbmb" path="res://doodads/terminal.gd" id="24_fxxvd"]
 
 [node name="TestLevel" type="Node2D" unique_id=1203923865]
 script = ExtResource("1_6euoa")
@@ -36,20 +43,13 @@ scale = Vector2(0.1, 0.1)
 position = Vector2(93.000015, 277)
 scale = Vector2(0.1, 0.1)
 
+[node name="0" parent="Const1Gate" index="0" unique_id=1841688787]
+locked = true
+
 [node name="lever" parent="." unique_id=26854987 instance=ExtResource("3_x8lwj")]
 position = Vector2(299, 108.00001)
 scale = Vector2(0.1, 0.1)
 nimi = "wan"
-
-[node name="lever3" parent="." unique_id=570877046 instance=ExtResource("3_x8lwj")]
-position = Vector2(203.00003, 484.00003)
-scale = Vector2(0.1, 0.1)
-nimi = "janilo"
-
-[node name="lever2" parent="." unique_id=1083743695 instance=ExtResource("3_x8lwj")]
-position = Vector2(297.00003, 315.00003)
-scale = Vector2(0.1, 0.1)
-nimi = "tu"
 
 [node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("4_t3dhk")]
 position = Vector2(672.99994, 231.99998)
@@ -68,7 +68,7 @@ offset_right = 655.0
 offset_bottom = 290.0
 scale = Vector2(0.5, 0.5)
 lights = [NodePath("../Lightbulb")]
-switches = [NodePath("../lever"), NodePath("../lever2")]
+switches = [NodePath("../lever")]
 values = Array[int]([1, 0, 0, -1])
 reload = true
 
@@ -76,10 +76,13 @@ reload = true
 position = Vector2(122, 106)
 scale = Vector2(0.1, 0.1)
 
-[node name="Wire" parent="." unique_id=241528333 instance=ExtResource("9_dyqbh")]
-position = Vector2(268.00006, 558)
-rotation = -3.070573
-scale = Vector2(0.78829765, 0.02)
+[node name="Wire" parent="." unique_id=241528333 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("9_dyqbh")]
+position = Vector2(185.5, 263.95)
+rotation = 2.4741287
+scale = Vector2(0.04507289, 0.02)
+term1 = NodePath("../Const1Gate/0")
+term2 = NodePath("../sequencetrain/Terminal2")
+rerender = true
 
 [node name="SpawnLimiter" parent="." unique_id=949111090 instance=ExtResource("10_hxp06")]
 position = Vector2(859, 13)
@@ -107,8 +110,63 @@ icon = ExtResource("17_hnalp")
 counter = NodePath("../SpawnLimiter")
 gatescale = 0.08
 
+[node name="lever4" parent="." unique_id=1814005310 instance=ExtResource("18_hnalp")]
+position = Vector2(333, 295.0001)
+scale = Vector2(0.1, 0.1)
+
+[node name="hammer" parent="." unique_id=1084187878 instance=ExtResource("19_kam1y")]
+position = Vector2(476, 340)
+scale = Vector2(0.1, 0.1)
+
+[node name="sequencetrain" parent="." unique_id=178047761 instance=ExtResource("20_hx3fy")]
+position = Vector2(274, 165.00005)
+scale = Vector2(0.1, 0.1)
+length = 4
+
+[node name="CollisionShape2D" parent="sequencetrain/draggable" parent_id_path=PackedInt32Array(178047761, 920224182) index="0" unique_id=476959739]
+position = Vector2(-28.5, 1275)
+
+[node name="House2" parent="sequencetrain" index="3" unique_id=1622528927]
+position = Vector2(0, 3400)
+
+[node name="loje" type="Node2D" parent="sequencetrain" unique_id=113837451 instance=ExtResource("21_n5inw")]
+script = ExtResource("22_ms3em")
+
+[node name="Terminal1" type="Node2D" parent="sequencetrain" unique_id=2024180146 instance=ExtResource("23_ljyin")]
+position = Vector2(-708, 0)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("24_fxxvd")
+
+[node name="jelo" type="Node2D" parent="sequencetrain" unique_id=299188667 instance=ExtResource("21_n5inw")]
+position = Vector2(0, 850)
+script = ExtResource("22_ms3em")
+
+[node name="Terminal2" type="Node2D" parent="sequencetrain" unique_id=1599121538 instance=ExtResource("23_ljyin")]
+position = Vector2(-708, 850)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("24_fxxvd")
+locked = true
+
+[node name="laso jelo" type="Node2D" parent="sequencetrain" unique_id=1793902935 instance=ExtResource("21_n5inw")]
+position = Vector2(0, 1700)
+script = ExtResource("22_ms3em")
+
+[node name="Terminal3" type="Node2D" parent="sequencetrain" unique_id=28259232 instance=ExtResource("23_ljyin")]
+position = Vector2(-708, 1700)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("24_fxxvd")
+
+[node name="laso loje" type="Node2D" parent="sequencetrain" unique_id=1043861473 instance=ExtResource("21_n5inw")]
+position = Vector2(0, 2550)
+script = ExtResource("22_ms3em")
+
+[node name="Terminal4" type="Node2D" parent="sequencetrain" unique_id=1989464988 instance=ExtResource("23_ljyin")]
+position = Vector2(-708, 2550)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("24_fxxvd")
+
 [editable path="Const1Gate"]
 [editable path="lever"]
-[editable path="lever3"]
 [editable path="Lightbulb"]
 [editable path="Lightbulb2"]
+[editable path="sequencetrain"]

@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ddt7t3w2dowjx" path="res://levels/level_button.tscn" id="3_6flho"]
 [ext_resource type="Script" uid="uid://430lpbaeqv34" path="res://levels/level_button.gd" id="4_ofye2"]
 [ext_resource type="Script" uid="uid://bd4lrjvv6rtld" path="res://sound/volumeslider.gd" id="5_3ye4h"]
+[ext_resource type="Script" uid="uid://tq2c0dedq8am" path="res://levels/oneoff/showcredits.gd" id="8_6flho"]
+[ext_resource type="Texture2D" uid="uid://cfpcuvj87x1qp" path="res://decoration/soweli1.jpg" id="9_7ty7c"]
+[ext_resource type="Texture2D" uid="uid://xch8mfhjl41q" path="res://decoration/soweli2.jpg" id="10_lppu5"]
 
 [node name="MainMenu" type="Control" unique_id=239555814]
 layout_mode = 3
@@ -45,7 +48,7 @@ columns = 5
 script = ExtResource("2_duh7t")
 reload = true
 
-[node name="Button1" type="Button" parent="GridContainer" unique_id=820382413 instance=ExtResource("3_6flho")]
+[node name="Button5" type="Button" parent="GridContainer" unique_id=820382413 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -54,7 +57,7 @@ text = "wan"
 script = ExtResource("4_ofye2")
 levelnumber = 1
 
-[node name="Button2" type="Button" parent="GridContainer" unique_id=1326033764 instance=ExtResource("3_6flho")]
+[node name="Button6" type="Button" parent="GridContainer" unique_id=1896217290 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -63,16 +66,16 @@ text = "tu"
 script = ExtResource("4_ofye2")
 levelnumber = 2
 
-[node name="Button3" type="Button" parent="GridContainer" unique_id=928727467 instance=ExtResource("3_6flho")]
+[node name="Button7" type="Button" parent="GridContainer" unique_id=1212439165 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("1_0ettg")
-text = "wan&tu"
+text = "tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 3
 
-[node name="Button4" type="Button" parent="GridContainer" unique_id=1454361653 instance=ExtResource("3_6flho")]
+[node name="Button8" type="Button" parent="GridContainer" unique_id=1010217505 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -81,7 +84,7 @@ text = "tu&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 4
 
-[node name="Button10" type="Button" parent="GridContainer" unique_id=856232461 instance=ExtResource("3_6flho")]
+[node name="Button9" type="Button" parent="GridContainer" unique_id=665055675 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -90,7 +93,7 @@ text = "luka"
 script = ExtResource("4_ofye2")
 levelnumber = 5
 
-[node name="Button11" type="Button" parent="GridContainer" unique_id=1958584515 instance=ExtResource("3_6flho")]
+[node name="Button12" type="Button" parent="GridContainer" unique_id=477631742 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -99,7 +102,7 @@ text = "luka&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 6
 
-[node name="Button15" type="Button" parent="GridContainer" unique_id=1791675619 instance=ExtResource("3_6flho")]
+[node name="Button13" type="Button" parent="GridContainer" unique_id=1838494713 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -108,16 +111,16 @@ text = "luka&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 7
 
-[node name="Button16" type="Button" parent="GridContainer" unique_id=486457576 instance=ExtResource("3_6flho")]
+[node name="Button14" type="Button" parent="GridContainer" unique_id=1680822949 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("1_0ettg")
-text = "luka&wan&tu"
+text = "luka&tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 8
 
-[node name="Button17" type="Button" parent="GridContainer" unique_id=543098799 instance=ExtResource("3_6flho")]
+[node name="Button26" type="Button" parent="GridContainer" unique_id=1290143432 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -126,7 +129,7 @@ text = "luka&tu&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 9
 
-[node name="Button18" type="Button" parent="GridContainer" unique_id=208043495 instance=ExtResource("3_6flho")]
+[node name="Button27" type="Button" parent="GridContainer" unique_id=1400795601 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -135,7 +138,7 @@ text = "luka&luka"
 script = ExtResource("4_ofye2")
 levelnumber = 10
 
-[node name="Button19" type="Button" parent="GridContainer" unique_id=1207265574 instance=ExtResource("3_6flho")]
+[node name="Button28" type="Button" parent="GridContainer" unique_id=1184498066 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -144,7 +147,7 @@ text = "luka&luka&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 11
 
-[node name="Button20" type="Button" parent="GridContainer" unique_id=1957530561 instance=ExtResource("3_6flho")]
+[node name="Button29" type="Button" parent="GridContainer" unique_id=1159606452 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -153,16 +156,16 @@ text = "luka&luka&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 12
 
-[node name="Button21" type="Button" parent="GridContainer" unique_id=974411278 instance=ExtResource("3_6flho")]
+[node name="Button30" type="Button" parent="GridContainer" unique_id=1361178805 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("1_0ettg")
-text = "luka&luka&wan&tu"
+text = "luka&luka&tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 13
 
-[node name="Button22" type="Button" parent="GridContainer" unique_id=84644408 instance=ExtResource("3_6flho")]
+[node name="Button31" type="Button" parent="GridContainer" unique_id=1458809136 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -171,7 +174,7 @@ text = "luka&luka&tu&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 14
 
-[node name="Button23" type="Button" parent="GridContainer" unique_id=1497389537 instance=ExtResource("3_6flho")]
+[node name="Button32" type="Button" parent="GridContainer" unique_id=841154236 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -180,7 +183,7 @@ text = "luka&luka&luka"
 script = ExtResource("4_ofye2")
 levelnumber = 15
 
-[node name="Button24" type="Button" parent="GridContainer" unique_id=855826616 instance=ExtResource("3_6flho")]
+[node name="Button33" type="Button" parent="GridContainer" unique_id=1073656463 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -189,7 +192,7 @@ text = "luka&luka&luka&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 16
 
-[node name="Button25" type="Button" parent="GridContainer" unique_id=755202890 instance=ExtResource("3_6flho")]
+[node name="Button34" type="Button" parent="GridContainer" unique_id=2039637017 instance=ExtResource("3_6flho")]
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -198,6 +201,63 @@ text = "luka&luka&luka&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 17
 
+[node name="Button35" type="Button" parent="GridContainer" unique_id=1432601065 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&luka&tu&wan"
+script = ExtResource("4_ofye2")
+levelnumber = 18
+
+[node name="Button36" type="Button" parent="GridContainer" unique_id=244142197 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&luka&tu&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 19
+
+[node name="Button40" type="Button" parent="GridContainer" unique_id=1397928816 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+text = "luka&luka&luka&luka"
+script = ExtResource("4_ofye2")
+levelnumber = 20
+
+[node name="Button44" type="Button" parent="GridContainer" unique_id=1755108372 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+theme_override_font_sizes/font_size = 20
+text = "mute02wan"
+script = ExtResource("4_ofye2")
+levelnumber = 21
+
+[node name="Button45" type="Button" parent="GridContainer" unique_id=1267776767 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+theme_override_font_sizes/font_size = 20
+text = "mute02tu"
+script = ExtResource("4_ofye2")
+levelnumber = 22
+
+[node name="Button46" type="Button" parent="GridContainer" unique_id=1971228494 instance=ExtResource("3_6flho")]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+theme_override_font_sizes/font_size = 20
+text = "mute02tu&wan"
+script = ExtResource("4_ofye2")
+levelnumber = 23
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1691486507]
 layout_mode = 0
 offset_left = 26.0
@@ -205,8 +265,8 @@ offset_top = 8.0
 offset_right = 406.0
 offset_bottom = 223.0
 bbcode_enabled = true
-text = "[center]musi pi (ilo sona)
-pi (ken musi mute e ni)"
+text = "[center]jan li ken a musi e musi pi (ilo sona)
+"
 vertical_alignment = 1
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1025504833]
@@ -256,7 +316,7 @@ offset_right = 86.0
 offset_bottom = 104.0
 scale = Vector2(0.5, 0.5)
 bbcode_enabled = true
-text = "kalamakalama"
+text = "kalamaijo"
 
 [node name="musicslider2" type="HSlider" parent="settings" unique_id=1916021567]
 layout_mode = 0
@@ -280,4 +340,124 @@ scale = Vector2(0.5, 0.5)
 bbcode_enabled = true
 text = "kalamamusi"
 
+[node name="Button" type="Button" parent="." unique_id=909205861]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 520.0
+offset_right = 372.0
+offset_bottom = 650.0
+scale = Vector2(0.5, 0.5)
+text = "jan li pona e musi ni"
+script = ExtResource("8_6flho")
+
+[node name="Control" type="Control" parent="Button" unique_id=1707664522]
+visible = false
+z_index = 2
+anchors_preset = 0
+offset_left = -48.0
+offset_top = 224.0
+offset_right = -8.0
+offset_bottom = 264.0
+
+[node name="Panel" type="Panel" parent="Button/Control" unique_id=2073444643]
+layout_mode = 0
+offset_left = 434.0
+offset_top = -926.0
+offset_right = 1420.0
+offset_bottom = -292.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button/Control" unique_id=1808068094]
+layout_mode = 0
+offset_left = 502.0
+offset_top = -848.0
+offset_right = 1342.0
+offset_bottom = -370.0
+bbcode_enabled = true
+text = "[ul bullet=❧ ] jan [e.wan:] li pona e toki lon musi ni. tan ona la mi wile suli e sona toki&pona
+jan[mi.kala.] li sona ala e musi ni. taso ona pona e sitelen leko lon ni
+[/ul]"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Button/Control" unique_id=84037228]
+layout_mode = 0
+offset_left = 488.0
+offset_top = -872.0
+offset_right = 586.0
+offset_bottom = -756.0
+theme_override_font_sizes/font_size = 32
+text = "weka"
+
+[node name="Button2" type="Button" parent="." unique_id=936073991]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 520.0
+offset_right = 580.0
+offset_bottom = 650.0
+scale = Vector2(0.5, 0.5)
+text = "jan li wile lukin e sitelen soweli"
+script = ExtResource("8_6flho")
+
+[node name="Control" type="Control" parent="Button2" unique_id=126708399]
+visible = false
+z_index = 2
+anchors_preset = 0
+offset_left = -432.0
+offset_top = 128.0
+offset_right = -392.0
+offset_bottom = 168.0
+
+[node name="Panel" type="Panel" parent="Button2/Control" unique_id=2080498974]
+layout_mode = 0
+offset_left = 344.0
+offset_top = -972.0
+offset_right = 1454.0
+offset_bottom = -188.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button2/Control" unique_id=1674155157]
+visible = false
+layout_mode = 0
+offset_left = 502.0
+offset_top = -848.0
+offset_right = 1342.0
+offset_bottom = -434.0
+bbcode_enabled = true
+text = "[ul bullet=❧ ] jan [e.wan:] li pona e toki lon musi ni. tan ona la mi wile suli e sona toki&pona
+jan[jelo.soweli.toki.] li toki e ijo ike lon musi ni.
+[/ul]"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Button2/Control" unique_id=240259890]
+layout_mode = 0
+offset_left = 410.0
+offset_top = -892.0
+offset_right = 1028.0
+offset_bottom = -262.45917
+texture = ExtResource("9_7ty7c")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Button2/Control" unique_id=1019184484]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = -894.0
+offset_right = 1502.0
+offset_bottom = -264.45917
+texture = ExtResource("10_lppu5")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="Button" type="Button" parent="Button2/Control" unique_id=1473562629]
+layout_mode = 0
+offset_left = 398.0
+offset_top = -904.0
+offset_right = 496.0
+offset_bottom = -788.0
+theme_override_font_sizes/font_size = 32
+text = "weka"
+
 [connection signal="tree_exiting" from="settings/sfxSlider" to="settings/sfxSlider" method="_on_tree_exiting"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button/Control/Button" to="Button" method="_on_close_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button2/Control/Button" to="Button2" method="_on_close_pressed"]

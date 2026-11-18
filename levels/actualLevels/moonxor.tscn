@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://dfyfnjeg6xlyg"]
+
+[ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_huhi5"]
+[ext_resource type="Texture2D" uid="uid://lq6f45ouqjyp" path="res://decoration/11.png" id="2_jggeu"]
+[ext_resource type="PackedScene" uid="uid://c4ttv458hke38" path="res://levels/truthTable.tscn" id="6_mcyha"]
+[ext_resource type="PackedScene" uid="uid://svfvj0gwbfmm" path="res://levels/spawnLimiter.tscn" id="7_qi8k8"]
+[ext_resource type="PackedScene" uid="uid://bpqkjs8v0fk2c" path="res://areas/trash.tscn" id="8_5a2n3"]
+[ext_resource type="Script" uid="uid://hfekyhboly8o" path="res://doodads/const_1_gate.gd" id="8_hglbv"]
+[ext_resource type="PackedScene" uid="uid://ch10l0wcklr3a" path="res://doodads/andgate.tscn" id="9_4h6au"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="9_huhi5"]
+[ext_resource type="Texture2D" uid="uid://w0ywdky5cus7" path="res://doodads/images/const-1.png" id="10_jj7di"]
+[ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="10_kgfof"]
+[ext_resource type="PackedScene" uid="uid://bvimmyvxk5tou" path="res://doodads/lightbulb.tscn" id="12_htrce"]
+[ext_resource type="PackedScene" uid="uid://dqsfvl4vbx2x" path="res://doodads/Wire.tscn" id="13_jrxoa"]
+[ext_resource type="PackedScene" uid="uid://b73g7byut13yr" path="res://areas/spawnbutton.tscn" id="14_xhp1h"]
+[ext_resource type="PackedScene" uid="uid://culdlu5wigc25" path="res://doodads/nandnorgate.tscn" id="15_56r77"]
+[ext_resource type="PackedScene" uid="uid://dqsi7hqmcgeyx" path="res://doodads/hexor.tscn" id="16_jggeu"]
+[ext_resource type="Texture2D" uid="uid://m5crjbnr2jry" path="res://doodads/images/nandnor.png" id="16_ylxka"]
+[ext_resource type="Texture2D" uid="uid://cpy7k85bf5nlr" path="res://doodads/images/hexagon.png" id="17_cany4"]
+[ext_resource type="PackedScene" uid="uid://k5cfrim1bu0v" path="res://doodads/levermux3.tscn" id="17_huhi5"]
+[ext_resource type="PackedScene" uid="uid://dcupfsj2kwfyd" path="res://levels/menubutton.tscn" id="17_idf3j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygeu7"]
+radius = 464.64233
+
+[node name="Level6" type="Node2D" unique_id=1203923865]
+script = ExtResource("1_huhi5")
+
+[node name="bg" type="TextureRect" parent="." unique_id=37175177]
+self_modulate = Color(8.278489e-06, 0.9743933, 0.94509643, 1)
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("2_jggeu")
+
+[node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("6_mcyha")]
+offset_left = 647.0
+offset_top = 290.0
+offset_right = 647.0
+offset_bottom = 290.0
+scale = Vector2(0.5, 0.5)
+lights = [NodePath("../Lightbulb")]
+switches = [NodePath("../lever"), NodePath("../lever2")]
+values = Array[int]([1, 0, -1, 0, 0, -1, -1, -1, -1])
+onlyshowRows = Array[int]([0, 1, 2, 4, 5, 8])
+reload = true
+permute = true
+
+[node name="TableLabel" parent="TruthTable" index="0" unique_id=382658699]
+offset_top = -18.0
+offset_right = 600.0
+offset_bottom = 620.0
+text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
+[cell ][center]ilosuno[/center][/cell][cell][table=2][cell][anu][/cell][cell][anu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]lon[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]lon[/center][/cell][cell][center]lon[/center][/cell][cell][center]lon[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][ilo suno][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]mun[/center][/cell][cell][center]ala[/center][/cell][cell][center]mun[/center][/cell][cell][center]mun[/center][/cell][/table][/cell]"
+
+[node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
+offset_left = -293.0
+offset_top = 454.0
+offset_right = -17.0
+offset_bottom = 610.0
+
+[node name="SpawnLimiter" parent="." unique_id=949111090 instance=ExtResource("7_qi8k8")]
+position = Vector2(708.00006, 10)
+scale = Vector2(0.4, 0.4)
+
+[node name="trash" parent="." unique_id=2056507829 node_paths=PackedStringArray("spawnLimiter") instance=ExtResource("8_5a2n3")]
+position = Vector2(826, 6)
+scale = Vector2(0.2, 0.2)
+spawnLimiter = NodePath("../SpawnLimiter")
+
+[node name="dummy" parent="." unique_id=1857864937 instance=ExtResource("9_4h6au")]
+position = Vector2(-290.99997, 319.00003)
+scale = Vector2(0.1, 0.1)
+
+[node name="0" parent="dummy" index="0" unique_id=1841688787]
+locked = true
+
+[node name="1" parent="dummy" index="1" unique_id=274440768]
+locked = true
+
+[node name="Const1Gate" parent="." unique_id=997263221 instance=ExtResource("10_kgfof")]
+position = Vector2(-194.99997, 261)
+scale = Vector2(0.1, 0.1)
+
+[node name="1" parent="Const1Gate" index="1" unique_id=1465797355]
+locked = true
+
+[node name="2" parent="Const1Gate" index="2" unique_id=107635713]
+locked = true
+
+[node name="Const-1Gate" type="Node2D" parent="." unique_id=2135817932]
+position = Vector2(-201, 416.00003)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("8_hglbv")
+val = -1
+
+[node name="0" parent="Const-1Gate" unique_id=552934218 instance=ExtResource("9_huhi5")]
+position = Vector2(748, 8.999996)
+rotation = -3.1337445
+scale = Vector2(0.74999994, 0.74999994)
+locked = false
+
+[node name="1" parent="Const-1Gate" unique_id=289254165 instance=ExtResource("9_huhi5")]
+position = Vector2(-384.99988, -607.99994)
+rotation = 1.0471977
+scale = Vector2(0.75, 0.75)
+locked = true
+
+[node name="2" parent="Const-1Gate" unique_id=1743125121 instance=ExtResource("9_huhi5")]
+position = Vector2(-377.99988, 585.00006)
+rotation = -1.0471976
+scale = Vector2(0.75, 0.75)
+locked = true
+
+[node name="Const1" type="Sprite2D" parent="Const-1Gate" unique_id=1730796756]
+texture = ExtResource("10_jj7di")
+
+[node name="draggable" type="Area2D" parent="Const-1Gate" unique_id=1300627180]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Const-1Gate/draggable" unique_id=1606286944]
+position = Vector2(3.5, 0.5)
+shape = SubResource("CircleShape2D_ygeu7")
+
+[node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("12_htrce")]
+position = Vector2(787.9999, 223.99998)
+scale = Vector2(0.1, 0.1)
+nimi = "ilo suno"
+
+[node name="Wire6" parent="." unique_id=1131736701 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_jrxoa")]
+position = Vector2(-86.69998, 163.50005)
+rotation = 2.896614
+scale = Vector2(0.3026359, 0.019999998)
+term1 = NodePath("../Const1Gate/1")
+term2 = NodePath("../lever/top")
+
+[node name="Wire2" parent="." unique_id=1157537607 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_jrxoa")]
+position = Vector2(-146.45, 225.90005)
+rotation = 2.8154209
+scale = Vector2(0.43630368, 0.02)
+term1 = NodePath("../dummy/0")
+term2 = NodePath("../lever/mid")
+
+[node name="Wire5" parent="." unique_id=241528333 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_jrxoa")]
+position = Vector2(-89.299995, 270.20007)
+rotation = 2.626615
+scale = Vector2(0.3451668, 0.02)
+term1 = NodePath("../Const-1Gate/1")
+term2 = NodePath("../lever/bot")
+
+[node name="Wire3" parent="." unique_id=1067625729 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_jrxoa")]
+position = Vector2(-146.04999, 356.70007)
+rotation = -3.0675464
+scale = Vector2(0.4136334, 0.02)
+term1 = NodePath("../dummy/1")
+term2 = NodePath("../lever2/mid")
+
+[node name="Wire4" parent="." unique_id=1203960880 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_jrxoa")]
+position = Vector2(-86.34998, 331.15002)
+rotation = -3.0622103
+scale = Vector2(0.29382527, 0.019999998)
+term1 = NodePath("../Const1Gate/2")
+term2 = NodePath("../lever2/top")
+
+[node name="Wire7" parent="." unique_id=1024313284 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_jrxoa")]
+position = Vector2(-88.95, 437.85007)
+rotation = 2.9017239
+scale = Vector2(0.30853358, 0.02)
+term1 = NodePath("../Const-1Gate/2")
+term2 = NodePath("../lever2/bot")
+
+[node name="Spawnbutton3" parent="." unique_id=1593536310 node_paths=PackedStringArray("counter") instance=ExtResource("14_xhp1h")]
+position = Vector2(568, 8.000009)
+scale = Vector2(0.4, 0.4)
+gateScene = ExtResource("15_56r77")
+icon = ExtResource("16_ylxka")
+counter = NodePath("../SpawnLimiter")
+
+[node name="Spawnbutton4" parent="." unique_id=1388948706 node_paths=PackedStringArray("counter") instance=ExtResource("14_xhp1h")]
+position = Vector2(424.00006, 8.000009)
+scale = Vector2(0.4, 0.4)
+gateScene = ExtResource("16_jggeu")
+icon = ExtResource("17_cany4")
+counter = NodePath("../SpawnLimiter")
+gatescale = 0.08
+
+[node name="menubutton" parent="." unique_id=1729448233 instance=ExtResource("17_idf3j")]
+scale = Vector2(0.8, 0.8)
+
+[node name="lever" parent="." unique_id=2002650549 instance=ExtResource("17_huhi5")]
+position = Vector2(118.99999, 158.00008)
+scale = Vector2(0.1, 0.1)
+nimi = "anu"
+
+[node name="top" parent="lever" index="0" unique_id=1841688787]
+locked = true
+
+[node name="mid" parent="lever" index="1" unique_id=274440768]
+locked = true
+
+[node name="bot" parent="lever" index="2" unique_id=103327797]
+locked = true
+
+[node name="lever2" parent="." unique_id=1206993357 instance=ExtResource("17_huhi5")]
+position = Vector2(118.99999, 374.0001)
+scale = Vector2(0.1, 0.1)
+nimi = "anu"
+
+[node name="top" parent="lever2" index="0" unique_id=1841688787]
+locked = true
+
+[node name="mid" parent="lever2" index="1" unique_id=274440768]
+locked = true
+
+[node name="bot" parent="lever2" index="2" unique_id=103327797]
+locked = true
+
+[editable path="TruthTable"]
+[editable path="dummy"]
+[editable path="Const1Gate"]
+[editable path="Lightbulb"]
+[editable path="lever"]
+[editable path="lever2"]

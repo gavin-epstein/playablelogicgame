@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://k5cfrim1bu0v"]
+
+[ext_resource type="Script" uid="uid://d11wc6hwacvn8" path="res://doodads/levermux3.gd" id="1_r0b0t"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_84poo"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="3_higg6"]
+[ext_resource type="Texture2D" uid="uid://cek12g7uaqrdu" path="res://doodads/images/levermux2on.png" id="4_g44hu"]
+[ext_resource type="Texture2D" uid="uid://cylfc41b4o2bp" path="res://doodads/images/levermux3lon.png" id="5_v6cqf"]
+[ext_resource type="AudioStream" uid="uid://j3rcq8qnb12y" path="res://sound/click2.wav" id="6_lfl44"]
+[ext_resource type="Script" uid="uid://c3aqt3enwy0k6" path="res://sound/sfxnot3d.gd" id="7_dpjws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygeu7"]
+size = Vector2(774, 1235)
+
+[node name="lever" type="Node2D" unique_id=2002650549]
+script = ExtResource("1_r0b0t")
+
+[node name="top" parent="." unique_id=1841688787 instance=ExtResource("2_84poo")]
+position = Vector2(-589, -312)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="mid" parent="." unique_id=274440768 instance=ExtResource("2_84poo")]
+position = Vector2(-588, -20)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="bot" parent="." unique_id=103327797 instance=ExtResource("2_84poo")]
+position = Vector2(-581, 272)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="out" parent="." unique_id=2097018757 instance=ExtResource("2_84poo")]
+position = Vector2(571, 0)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=941059217]
+offset_left = -281.0
+offset_top = 401.0
+offset_right = -5.5
+offset_bottom = 542.5
+scale = Vector2(2, 2)
+theme = ExtResource("3_higg6")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+fit_content = true
+
+[node name="Lever" type="TextureButton" parent="." unique_id=2094657652]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("4_g44hu")
+texture_pressed = ExtResource("5_v6cqf")
+
+[node name="draggable" type="Area2D" parent="." unique_id=1464764120]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=2003494669]
+position = Vector2(6, 83.5)
+shape = SubResource("RectangleShape2D_ygeu7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=217312289]
+stream = ExtResource("6_lfl44")
+bus = &"UI"
+script = ExtResource("7_dpjws")

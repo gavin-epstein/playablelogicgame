@@ -4,6 +4,13 @@ const PATH := "user://save.json"
 const mainmenuScene = preload("res://levels/main_menu.tscn")
 const winscreen = preload("res://levels/oneoff/Endscreen.tscn")
 const LEVELPATH = "res://levels/actualLevels/"
+var inProgressScenes = {}
+var completed = []
+signal updateProgress
+const UnlockedAtATime = 100 #DEBUG
+var loaded = false
+var last_level = 0
+
 @export var levelScenes = []
 
 @export var reload:bool=false:
@@ -15,11 +22,7 @@ const LEVELPATH = "res://levels/actualLevels/"
 var currentLevel = 0
 @export var totalLevels = 0
 
-var inProgressScenes = {}
-var completed = []
-signal updateProgress
-const UnlockedAtATime = 5
-var loaded = false
+
 
 func loadScenes():
 	levelScenes = []
@@ -89,8 +92,8 @@ func loadLevelFromData(d:Dictionary):
 	level.edited.emit()
 
 func loadLevel(i, reset = false):
-	
 	if currentLevel !=0:
+		last_level = currentLevel
 		var scn = saveLevelToData()
 		if len(scn.keys())>0:
 			inProgressScenes[currentLevel]= scn

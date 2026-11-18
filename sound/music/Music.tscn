@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://r514kefajyrn"]
+
+[ext_resource type="Script" uid="uid://b6p2wnsuq6im6" path="res://sound/music/music.gd" id="1_wvsjn"]
+[ext_resource type="AudioStream" uid="uid://bmmr3io5nqvch" path="res://sound/music/b.wav" id="2_u6cm5"]
+
+[node name="Music" type="Node" unique_id=1428816800]
+script = ExtResource("1_wvsjn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1155077091]
+stream = ExtResource("2_u6cm5")
+autoplay = true
+bus = &"Music"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

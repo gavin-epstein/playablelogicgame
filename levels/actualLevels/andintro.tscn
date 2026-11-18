@@ -34,7 +34,7 @@ reload = true
 [node name="TableLabel" parent="TruthTable" index="0" unique_id=382658699]
 offset_right = 600.0
 offset_bottom = 549.0
-text = "[table=2][cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
 [cell ][center]ilosuno[/center][/cell][cell][table=2][cell][wan][/cell][cell][tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][ilo suno][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
 
 [node name="and" parent="." unique_id=2002650549 instance=ExtResource("4_u23cm")]
@@ -101,7 +101,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("7_jl3r2")]
 position = Vector2(787.9999, 223.99998)
 scale = Vector2(0.1, 0.1)
-nimi = "ilo suno"
+nimi = "tu&wan"
 
 [node name="0" parent="Lightbulb" index="0" unique_id=1841688787]
 locked = true

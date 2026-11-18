@@ -34,7 +34,7 @@ offset_left = -32.0
 offset_top = -96.0
 offset_right = 568.0
 offset_bottom = 453.0
-text = "[table=2][cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
 [cell ][center]ilosuno[/center][/cell][cell][table=2][cell][wan][/cell][cell][tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][tu][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
 
 [node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
@@ -58,7 +58,7 @@ nimi = "tu"
 [node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("6_2cw5h")]
 position = Vector2(851.9999, 192.00006)
 scale = Vector2(0.15, 0.15)
-nimi = "tu"
+nimi = "tu&wan"
 
 [node name="menubutton" parent="." unique_id=1729448233 instance=ExtResource("7_kvq2p")]
 

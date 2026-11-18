@@ -6,6 +6,7 @@ func _ready() -> void:
 	if not pressed.is_connected(_on_pressed):
 		pressed.connect(_on_pressed)
 	GlobalProgress.updateProgress.connect(updateState)
+	$Glow.visible = (GlobalProgress.last_level == levelnumber)
 	
 func _on_pressed() -> void:
 	$AudioStreamPlayer.play_randomized()

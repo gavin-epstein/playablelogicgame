@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://m5crjbnr2jry" path="res://doodads/images/nandnor.png" id="17_wm1c8"]
 [ext_resource type="PackedScene" uid="uid://dcupfsj2kwfyd" path="res://levels/menubutton.tscn" id="18_si0xp"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rtr7"]
+
 [node name="Level5" type="Node2D" unique_id=1203923865]
 script = ExtResource("1_j6m63")
 
@@ -20,6 +22,21 @@ position = Vector2(463, 350)
 rotation = -2.2548044
 scale = Vector2(0.61349565, 1)
 texture = ExtResource("2_lsk23")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=2024021939]
+self_modulate = Color(1, 1, 1, 0.3137255)
+offset_left = -33.0
+offset_top = -176.0
+offset_right = 950.0
+offset_bottom = 809.0
+mouse_filter = 2
+theme = ExtResource("8_qpvvj")
+theme_override_colors/default_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 800
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4rtr7")
+text = "pakala"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SpawnLimiter" parent="." unique_id=949111090 instance=ExtResource("4_6bojj")]
 position = Vector2(708.00006, 10)
@@ -47,6 +64,7 @@ offset_top = 376.0
 offset_right = 1201.0
 offset_bottom = 828.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 theme = ExtResource("8_qpvvj")
 script = ExtResource("9_6ynrt")
 

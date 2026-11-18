@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dvhi6xurjwqdu"]
+
+[ext_resource type="Script" uid="uid://bgga41p5x0y6g" path="res://doodads/hammerdiode.gd" id="1_1ktcl"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="2_6xvkh"]
+[ext_resource type="Texture2D" uid="uid://7d6tq3g71djb" path="res://doodads/images/hammerdiode.png" id="3_1ktcl"]
+[ext_resource type="Texture2D" uid="uid://dkxiix020tv1y" path="res://doodads/images/hammerarrows.png" id="4_6xvkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rtr7"]
+size = Vector2(743, 842)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlpyj"]
+size = Vector2(624, 120)
+
+[node name="hammer" type="Node2D" unique_id=2002650549]
+script = ExtResource("1_1ktcl")
+
+[node name="in" parent="." unique_id=1841688787 instance=ExtResource("2_6xvkh")]
+position = Vector2(-693, 8)
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="top1" parent="." unique_id=274440768 instance=ExtResource("2_6xvkh")]
+position = Vector2(-165, -592.00006)
+rotation = 1.1868238
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="top2" parent="." unique_id=1769136330 instance=ExtResource("2_6xvkh")]
+position = Vector2(395, -592.00006)
+rotation = 1.9547688
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="bot1" parent="." unique_id=2097018757 instance=ExtResource("2_6xvkh")]
+position = Vector2(-157, 608)
+rotation = -1.1868238
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="bot2" parent="." unique_id=1882584665 instance=ExtResource("2_6xvkh")]
+position = Vector2(419.00003, 608)
+rotation = -1.9722221
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="back" type="Sprite2D" parent="." unique_id=2096905506]
+position = Vector2(-4, -4)
+scale = Vector2(1.104, 1.104)
+texture = ExtResource("3_1ktcl")
+
+[node name="arrows" type="Node2D" parent="." unique_id=1399197661]
+position = Vector2(120, 0)
+
+[node name="arrow" type="Sprite2D" parent="arrows" unique_id=1360167278]
+position = Vector2(-140, -4)
+scale = Vector2(1.104, 1.104)
+texture = ExtResource("4_6xvkh")
+
+[node name="draggable" type="Area2D" parent="." unique_id=920224182]
+position = Vector2(88, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable" unique_id=476959739]
+position = Vector2(39.5, -2)
+shape = SubResource("RectangleShape2D_4rtr7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="draggable" unique_id=2092688506]
+position = Vector2(-302, 7)
+shape = SubResource("RectangleShape2D_rlpyj")

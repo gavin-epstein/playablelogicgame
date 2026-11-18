@@ -39,7 +39,7 @@ func output(nname:String, val:int):
 			outputs[node] = val
 			node.input_changed()
 	else:
-		print("Err,terminal not found, ", name)
+		print("Err,terminal not found, ", nname, " in ", name)
 	
 	#else:
 		#if !get_tree().process_frame.is_connected(node.input_changed):

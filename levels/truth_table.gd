@@ -16,6 +16,7 @@ extends Control
 		if Engine.is_editor_hint():
 			reload= true
 			generate()
+@export var permute = false
 var rows:Dictionary = {}
 var roworder = []
 var validated_rows:Dictionary = {}
@@ -27,7 +28,8 @@ func _ready() -> void:
 			get_parent().edited.connect(_reset_validated)
 		for switch in switches:
 			switch.statechanged.connect(_attempt_validate)
-		
+		for light in lights:
+			light.changed.connect(_attempt_validate)
 func resetrows():
 	rows = {}
 	roworder=[]
@@ -41,9 +43,9 @@ func switchcell(val:int, validated:int):
 	if val == 1:
 		return "[cell" + back+"][center]sewi2[/center][/cell]"
 	elif val == 0:
-		return "[cell" + back+"][center]anpa[/center][/cell]"
+		return "[cell" + back+"][center]lon[/center][/cell]"
 	elif val == -1:
-		return "[cell" + back+"][center]insa[/center][/cell]"
+		return "[cell" + back+"][center]anpa[/center][/cell]"
 func lightcell(val:int, validated:int):
 	var back = ""
 	if validated ==1:
@@ -62,14 +64,14 @@ func generate():
 		$TableLabel.text = "ilo suno e ala"
 		return
 	if len(switches)==0:
-		$TableLabel.text = "ilo pi(open pine) e ale"
+		$TableLabel.text = "ilo luka e ale"
 		return
 	if len(rows) == 0:
 		generate_rows()
 	
 	var txt= "[table=2]"
 	#header
-	txt+= "[cell padding=2,2,2,2][center]ilo pi(open pini)[/center][/cell] 
+	txt+= "[cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
 [cell ][center]ilosuno[/center][/cell]"
 	txt+="[cell][table="+str(len(switches))+"]"
 	#subheader
@@ -105,8 +107,12 @@ func generate_rows():
 	var currow = 0
 	while true:
 		if len(onlyshowRows)==0 or currow in onlyshowRows:
-			rows[row_to_key(current)] = values.slice(len(lights)*currow,len(lights)*(currow+1))
-			roworder.append(current.duplicate())
+			var modcurrent = current.duplicate()
+			for i in range(len(modcurrent)):
+				if modcurrent[i]==0 and switches[i] is Levermux2: #gross way to skip 0 vals
+					modcurrent[i]=-1
+			rows[row_to_key(modcurrent)] = values.slice(len(lights)*currow,len(lights)*(currow+1))
+			roworder.append(modcurrent)
 		currow +=1
 		var gate = len(switches)-1
 		while true:
@@ -132,6 +138,9 @@ func _attempt_validate():
 	var curswitch:Array[int] = []
 	for switch:Lever in switches:
 		curswitch.append(switch.state)
+	if permute:
+		curswitch.sort()
+		curswitch.reverse()
 	if row_to_key(curswitch) in rows.keys(): #and (row_to_key(curswitch) not in validated_rows.keys() or $lukinale.visible==false):
 		var target = rows[row_to_key(curswitch)]
 		var valid = true

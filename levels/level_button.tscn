@@ -10,6 +10,7 @@ content_margin_top = 0.0
 content_margin_bottom = 0.0
 
 [node name="LevelButton" type="Button" unique_id=820382413]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 anchors_preset = 15
@@ -41,3 +42,13 @@ vertical_alignment = 1
 stream = ExtResource("3_hdjpb")
 bus = &"UI"
 script = ExtResource("4_hdjpb")
+
+[node name="Glow" type="Panel" parent="." unique_id=1653120522]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = -27.0
+offset_top = -30.0
+offset_right = 131.0
+offset_bottom = 129.0
+mouse_filter = 2

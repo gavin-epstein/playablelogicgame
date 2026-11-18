@@ -1,9 +1,15 @@
 class_name Level extends Node2D
 const nextButtonScene =  preload("res://levels/goNext.tscn")
 var update_queue=[]
-@warning_ignore("unused_signal") signal edited
+signal edited
+#signal steady_state
 var won = false
 var processing=false
+@export var wirewidth = .02
+func _ready():
+	if wirewidth != .02:
+		edited.connect(resizeWires)
+		resizeWires()
 func win():
 	if !won:
 		won=true
@@ -24,5 +30,11 @@ func process_queue():
 	while len(update_queue)>0:
 		var doodad:Doodad = update_queue.pop_front()
 		doodad.process_from_queue()
-		#print(len(update_queue))
+		#print(doodad.name)
 	processing = false
+#	steady_state.emit()
+	
+func resizeWires():
+	for child in get_children():
+		if child is Wire:
+			child.scale.y = wirewidth

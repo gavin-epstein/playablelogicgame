@@ -34,9 +34,9 @@ bbcode_enabled = true
 text = "
 
 
-	sina li pini e utala ale. ni la kepeken sona mute sinakepeken pali wawa sina. pona&mute a
+	sina pini e utala ale. sina pini kepeken sona mute. sina pini kepeken pali wawa. pona&mute a
 
-lon tenpo ni la musi ni e lili. tenpo kama mi li alasa suli e musi ni. tan ni la mi li toki tawa sina.  lon sina musi e musi ni la sina li pilin e seme "
+tenpo ni la musi ni e lili. tenpo kama mi alasa suli e musi ni. tan ni la mi kute e sina.  sina musi e musi ni la sina li pilin e seme"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=922928777]
 layout_mode = 0

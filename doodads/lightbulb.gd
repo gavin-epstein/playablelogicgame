@@ -1,10 +1,9 @@
 class_name Lighbulb extends Gate
 @export var nimi:String
-
+signal changed
 func _ready() -> void:
 	super._ready()
 	$Label.text = "[center]"+nimi+"[/center]"
-
 var value = 0
 func setBulb():
 	if value == 0:
@@ -24,4 +23,5 @@ func calculate():
 	if val !=value:
 		value =val
 		setBulb()
+		changed.emit()
 	

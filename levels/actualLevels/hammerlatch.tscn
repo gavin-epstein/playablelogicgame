@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://duyw7do2j7jy1"]
+
+[ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_8x6op"]
+[ext_resource type="Texture2D" uid="uid://lq6f45ouqjyp" path="res://decoration/11.png" id="2_xet6g"]
+[ext_resource type="PackedScene" uid="uid://c4ttv458hke38" path="res://levels/truthTable.tscn" id="3_tladd"]
+[ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="4_okx1q"]
+[ext_resource type="PackedScene" uid="uid://diraivbxdkd0w" path="res://doodads/levermux2.tscn" id="5_s1a2s"]
+[ext_resource type="PackedScene" uid="uid://bvimmyvxk5tou" path="res://doodads/lightbulb.tscn" id="6_8mf35"]
+[ext_resource type="PackedScene" uid="uid://dqsfvl4vbx2x" path="res://doodads/Wire.tscn" id="7_vmstp"]
+[ext_resource type="PackedScene" uid="uid://dqsi7hqmcgeyx" path="res://doodads/hexor.tscn" id="8_e071d"]
+[ext_resource type="PackedScene" uid="uid://dcupfsj2kwfyd" path="res://levels/menubutton.tscn" id="9_6cyeo"]
+[ext_resource type="PackedScene" uid="uid://ch10l0wcklr3a" path="res://doodads/andgate.tscn" id="10_8hc61"]
+[ext_resource type="PackedScene" uid="uid://dvhi6xurjwqdu" path="res://doodads/hammerdiode.tscn" id="11_xet6g"]
+
+[node name="Level2" type="Node2D" unique_id=1203923865]
+script = ExtResource("1_8x6op")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1127368270]
+self_modulate = Color(0.81960785, 0.5176471, 0.5803922, 1)
+offset_right = 1922.0
+offset_bottom = 1202.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_xet6g")
+stretch_mode = 4
+
+[node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("3_tladd")]
+offset_left = 15.0
+offset_top = 410.0
+offset_right = 15.0
+offset_bottom = 410.0
+scale = Vector2(0.5, 0.5)
+lights = [NodePath("../Lightbulb")]
+switches = [NodePath("../lever")]
+values = Array[int]([1, 1])
+reload = true
+
+[node name="TableLabel" parent="TruthTable" index="0" unique_id=382658699]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 468.0
+offset_bottom = 379.0
+text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
+[cell ][center]ilosuno[/center][/cell][cell][table=1][cell][wan][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][tu][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][/table][/cell]"
+
+[node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
+offset_top = 220.0
+offset_bottom = 348.0
+
+[node name="Const1Gate" parent="." unique_id=997263221 instance=ExtResource("4_okx1q")]
+position = Vector2(-98.99998, 261)
+scale = Vector2(0.1, 0.1)
+
+[node name="0" parent="Const1Gate" index="0" unique_id=1841688787]
+locked = true
+
+[node name="1" parent="Const1Gate" index="1" unique_id=1465797355]
+locked = true
+
+[node name="2" parent="Const1Gate" index="2" unique_id=107635713]
+locked = true
+
+[node name="lever" parent="." unique_id=26854987 instance=ExtResource("5_s1a2s")]
+position = Vector2(331, 132)
+scale = Vector2(0.15, 0.15)
+nimi = "wan"
+
+[node name="0" parent="lever" index="0" unique_id=1841688787]
+locked = true
+
+[node name="1" parent="lever" index="1" unique_id=274440768]
+locked = true
+
+[node name="Label" parent="lever" index="3" unique_id=941059217]
+metadata/_edit_use_anchors_ = true
+
+[node name="Lever" parent="lever" index="4" unique_id=2094657652]
+metadata/_edit_use_anchors_ = true
+
+[node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("6_8mf35")]
+position = Vector2(851.9999, 192.00006)
+scale = Vector2(0.15, 0.15)
+nimi = "tu"
+
+[node name="Wire6" parent="." unique_id=1131736701 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("7_vmstp")]
+position = Vector2(52.575012, 148.70001)
+rotation = 2.8769996
+scale = Vector2(0.39385656, 0.019999998)
+term1 = NodePath("../Const1Gate/1")
+term2 = NodePath("../lever/0")
+
+[node name="Wire7" parent="." unique_id=241528333 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("7_vmstp")]
+position = Vector2(107.47502, 239.30005)
+rotation = 2.6461327
+scale = Vector2(0.31003115, 0.019999998)
+term1 = NodePath("../dummy/2")
+term2 = NodePath("../lever/1")
+
+[node name="hex" parent="." unique_id=2068629428 instance=ExtResource("8_e071d")]
+position = Vector2(526, 406)
+scale = Vector2(0.08, 0.08)
+
+[node name="menubutton" parent="." unique_id=1729448233 instance=ExtResource("9_6cyeo")]
+
+[node name="dummy" parent="." unique_id=2002650549 instance=ExtResource("10_8hc61")]
+position = Vector2(-85.99997, 313.0001)
+scale = Vector2(0.1, 0.1)
+
+[node name="2" parent="dummy" index="2" unique_id=2097018757]
+locked = true
+
+[node name="hammer" parent="." unique_id=1927432446 instance=ExtResource("11_xet6g")]
+position = Vector2(564, 206.00005)
+scale = Vector2(0.15, 0.15)
+
+[editable path="TruthTable"]
+[editable path="Const1Gate"]
+[editable path="lever"]
+[editable path="dummy"]

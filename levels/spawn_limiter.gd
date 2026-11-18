@@ -28,7 +28,7 @@ static func toki_nanpa(nanpa:int):
 	elif nanpa == 2:
 		out+= "tu"
 	elif nanpa == 3:
-		out += "wan&tu"
+		out += "tu&wan"
 	elif nanpa == 4:
 		out+="tu&tu"
 	elif nanpa == 5:

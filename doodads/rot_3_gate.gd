@@ -2,7 +2,7 @@ extends Gate
 
 
 func calculate():
-	var sum =( input("in0")+input("in1")+input("in2")) %3
+	var sum =( input("in0")+input("in1")+input("in2")+6) %3
 	if sum ==0:
 		$Across.visible=true
 		$up.visible = false

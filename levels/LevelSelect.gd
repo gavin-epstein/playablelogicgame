@@ -26,4 +26,6 @@ func generate():
 			button.name = "Button"+str(i+1)
 			button.levelnumber = i+1
 			button.text = SpawnLimiter.toki_nanpa(i+1)
+			if i+1 > 20:
+				button.add_theme_font_size_override("font_size",20)
 			
