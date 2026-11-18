@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b5sl048nwee4a"]
+
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="1_d23cd"]
+[ext_resource type="Script" uid="uid://bilinhv1b4ed0" path="res://levels/sequence_table.gd" id="2_d23cd"]
+
+[node name="SeqTable" type="Control" unique_id=1459266319]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_d23cd")
+script = ExtResource("2_d23cd")
+values = null
+reload = null
+length = null
+
+[node name="TableLabel" type="RichTextLabel" parent="." unique_id=382658699]
+layout_mode = 0
+offset_right = 524.0
+offset_bottom = 481.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "ilo suno e ala"
+fit_content = true
+
+[node name="lukinale" type="Button" parent="." unique_id=2116686411]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 471.0
+offset_right = 393.0
+offset_bottom = 627.0
+theme_override_font_sizes/font_size = 56
+text = "o tawa e tomo tawa"
+
+[connection signal="pressed" from="lukinale" to="." method="runTrains"]

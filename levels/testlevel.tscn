@@ -21,9 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dvhi6xurjwqdu" path="res://doodads/hammerdiode.tscn" id="19_kam1y"]
 [ext_resource type="PackedScene" uid="uid://c6qdctiyq7tmc" path="res://doodads/sequencer.tscn" id="20_hx3fy"]
 [ext_resource type="PackedScene" uid="uid://dkufa6shviqm7" path="res://doodads/railsegment.tscn" id="21_n5inw"]
-[ext_resource type="Script" uid="uid://b0tmkrv41tycl" path="res://doodads/railsegment.gd" id="22_ms3em"]
 [ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="23_ljyin"]
-[ext_resource type="Script" uid="uid://byaaa6an6nbmb" path="res://doodads/terminal.gd" id="24_fxxvd"]
 
 [node name="TestLevel" type="Node2D" unique_id=1203923865]
 script = ExtResource("1_6euoa")
@@ -121,49 +119,56 @@ scale = Vector2(0.1, 0.1)
 [node name="sequencetrain" parent="." unique_id=178047761 instance=ExtResource("20_hx3fy")]
 position = Vector2(274, 165.00005)
 scale = Vector2(0.1, 0.1)
-length = 4
+length = 5
+nimi = "wan"
 
 [node name="CollisionShape2D" parent="sequencetrain/draggable" parent_id_path=PackedInt32Array(178047761, 920224182) index="0" unique_id=476959739]
-position = Vector2(-28.5, 1275)
+position = Vector2(-28.5, 1700)
 
 [node name="House2" parent="sequencetrain" index="3" unique_id=1622528927]
-position = Vector2(0, 3400)
+position = Vector2(0, 4250)
 
-[node name="loje" type="Node2D" parent="sequencetrain" unique_id=113837451 instance=ExtResource("21_n5inw")]
-script = ExtResource("22_ms3em")
+[node name="Label" parent="sequencetrain/House2/TextureRect3" parent_id_path=PackedInt32Array(178047761, 1214604653) index="0" unique_id=462445289]
+text = "wan"
 
-[node name="Terminal1" type="Node2D" parent="sequencetrain" unique_id=2024180146 instance=ExtResource("23_ljyin")]
+[node name="loje" parent="sequencetrain" unique_id=113837451 instance=ExtResource("21_n5inw")]
+
+[node name="Terminal1" parent="sequencetrain" unique_id=1993442907 instance=ExtResource("23_ljyin")]
 position = Vector2(-708, 0)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("24_fxxvd")
+locked = false
 
-[node name="jelo" type="Node2D" parent="sequencetrain" unique_id=299188667 instance=ExtResource("21_n5inw")]
+[node name="jelo loje" parent="sequencetrain" unique_id=1335537369 instance=ExtResource("21_n5inw")]
 position = Vector2(0, 850)
-script = ExtResource("22_ms3em")
 
-[node name="Terminal2" type="Node2D" parent="sequencetrain" unique_id=1599121538 instance=ExtResource("23_ljyin")]
+[node name="Terminal2" parent="sequencetrain" unique_id=954420610 instance=ExtResource("23_ljyin")]
 position = Vector2(-708, 850)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("24_fxxvd")
 locked = true
 
-[node name="laso jelo" type="Node2D" parent="sequencetrain" unique_id=1793902935 instance=ExtResource("21_n5inw")]
+[node name="jelo laso" parent="sequencetrain" unique_id=143615758 instance=ExtResource("21_n5inw")]
 position = Vector2(0, 1700)
-script = ExtResource("22_ms3em")
 
-[node name="Terminal3" type="Node2D" parent="sequencetrain" unique_id=28259232 instance=ExtResource("23_ljyin")]
+[node name="Terminal3" parent="sequencetrain" unique_id=698135096 instance=ExtResource("23_ljyin")]
 position = Vector2(-708, 1700)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("24_fxxvd")
+locked = false
 
-[node name="laso loje" type="Node2D" parent="sequencetrain" unique_id=1043861473 instance=ExtResource("21_n5inw")]
+[node name="laso2" parent="sequencetrain" unique_id=2104847477 instance=ExtResource("21_n5inw")]
 position = Vector2(0, 2550)
-script = ExtResource("22_ms3em")
 
-[node name="Terminal4" type="Node2D" parent="sequencetrain" unique_id=1989464988 instance=ExtResource("23_ljyin")]
+[node name="Terminal4" parent="sequencetrain" unique_id=980729219 instance=ExtResource("23_ljyin")]
 position = Vector2(-708, 2550)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("24_fxxvd")
+locked = false
+
+[node name="laso loje" parent="sequencetrain" unique_id=825284484 instance=ExtResource("21_n5inw")]
+position = Vector2(0, 3400)
+
+[node name="Terminal8" parent="sequencetrain" unique_id=1916682713 instance=ExtResource("23_ljyin")]
+position = Vector2(-708, 3400)
+scale = Vector2(0.5, 0.5)
+locked = false
 
 [editable path="Const1Gate"]
 [editable path="lever"]

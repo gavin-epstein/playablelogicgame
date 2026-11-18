@@ -1,6 +1,6 @@
 extends Node2D
 var goal = -850
-var speed = 2 #tiles per second
+var speed = 3 #tiles per second
 var term:WireTerminal 
 func _ready() -> void:
 	go_to_position(0)
@@ -11,8 +11,10 @@ func go_to_position(i):
 		self.position.y = -850
 		goal = -850
 		$CPUParticles2D.emitting = false
+		get_parent().state = 0
 	elif i <= get_parent().length:
 		goal = 850 *(i-1)
+		$CPUParticles2D.emitting = true
 	else:
 		goal = 850 * (i+1)
 

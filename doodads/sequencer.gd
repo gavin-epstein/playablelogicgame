@@ -1,5 +1,5 @@
 @tool
-extends Gate
+class_name Sequencer extends Gate
 @export var length=0:
 	set(val):
 		if val != length and Engine.is_editor_hint():
@@ -7,6 +7,10 @@ extends Gate
 			regenerate()
 		else:
 			length=val
+@export var nimi:String:
+	set(val):
+		nimi = val
+		$House2/TextureRect3/Label.text = nimi
 const railsegmentscene = preload("res://doodads/railsegment.tscn")
 const terminal = preload("res://doodads/terminal.tscn")
 const colors = {
@@ -84,9 +88,3 @@ func advance():
 	state += 1
 	$Train.go_to_position(state)
 	calculate()
-
-func test_train():
-	while state <= length:
-		advance()
-		await get_tree().create_timer(1).timeout	
-	state= 0

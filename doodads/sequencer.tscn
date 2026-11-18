@@ -18,7 +18,7 @@
 colors = PackedColorArray(1, 1, 1, 1, 0.003921569, 0.003921569, 0.003921569, 0.49803922)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rtr7"]
-size = Vector2(837, 3400)
+size = Vector2(837, 5100)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m58vp"]
 bg_color = Color(1, 1, 1, 1)
@@ -26,6 +26,7 @@ bg_color = Color(1, 1, 1, 1)
 [node name="sequencetrain" type="Node2D" unique_id=2002650549]
 script = ExtResource("1_m80bb")
 length = 2
+nimi = null
 
 [node name="Train" type="Node2D" parent="." unique_id=1912274269]
 z_index = 1
@@ -44,7 +45,6 @@ texture = ExtResource("2_nnqs3")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Train" unique_id=929876498]
 position = Vector2(-16, -304)
-scale = Vector2(0.1, 0.1)
 emitting = false
 amount = 12
 texture = ExtResource("3_omb84")
@@ -55,8 +55,8 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 186.54
 initial_velocity_max = 474.01
 angle_max = 380.0
-scale_amount_min = 0.5
-scale_amount_max = 1.5
+scale_amount_min = 0.05
+scale_amount_max = 0.15
 color_ramp = SubResource("Gradient_omb84")
 
 [node name="draggable" type="Area2D" parent="." unique_id=920224182]
@@ -128,6 +128,21 @@ texture = ExtResource("6_borj8")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="Label" type="RichTextLabel" parent="House2/TextureRect3" unique_id=462445289]
+z_index = 2
+layout_mode = 0
+offset_left = 304.0
+offset_top = 674.0
+offset_right = 579.5
+offset_bottom = 815.5
+scale = Vector2(2, 2)
+theme = ExtResource("2_c34h2")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="out" parent="." unique_id=1841688787 instance=ExtResource("2_m80bb")]
 z_index = 1
 position = Vector2(578, -850)
@@ -135,7 +150,7 @@ rotation = 3.1415927
 scale = Vector2(0.5, 0.5)
 locked = false
 
-[node name="Button" type="Button" parent="." unique_id=1079433655]
+[node name="Tawa" type="Button" parent="." unique_id=1079433655]
 offset_left = -1006.0
 offset_top = -1235.0
 offset_right = -766.5
@@ -161,5 +176,3 @@ script = ExtResource("8_nnqs3")
 position = Vector2(-708, 850)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("13_2iwq2")
-
-[connection signal="pressed" from="Button" to="." method="test_train"]
