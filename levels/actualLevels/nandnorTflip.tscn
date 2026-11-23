@@ -1,0 +1,383 @@
+[gd_scene format=3 uid="uid://bdljsjs2kusji"]
+
+[ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_6jpri"]
+[ext_resource type="Texture2D" uid="uid://cv4ll251eny01" path="res://decoration/20.png" id="2_2qc5d"]
+[ext_resource type="PackedScene" uid="uid://svfvj0gwbfmm" path="res://levels/spawnLimiter.tscn" id="3_8yor3"]
+[ext_resource type="PackedScene" uid="uid://b73g7byut13yr" path="res://areas/spawnbutton.tscn" id="4_lxnlc"]
+[ext_resource type="PackedScene" uid="uid://culdlu5wigc25" path="res://doodads/nandnorgate.tscn" id="5_u8jes"]
+[ext_resource type="Texture2D" uid="uid://m5crjbnr2jry" path="res://doodads/images/nandnor.png" id="6_hd1f1"]
+[ext_resource type="PackedScene" uid="uid://bpqkjs8v0fk2c" path="res://areas/trash.tscn" id="7_m1m2e"]
+[ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="8_5g61v"]
+[ext_resource type="Texture2D" uid="uid://cpy7k85bf5nlr" path="res://doodads/images/hexagon.png" id="8_b5ios"]
+[ext_resource type="PackedScene" uid="uid://bem83pay03wik" path="res://doodads/terminal.tscn" id="10_jk5qh"]
+[ext_resource type="PackedScene" uid="uid://bvimmyvxk5tou" path="res://doodads/lightbulb.tscn" id="12_mft6l"]
+[ext_resource type="PackedScene" uid="uid://dqsfvl4vbx2x" path="res://doodads/Wire.tscn" id="13_lmkk1"]
+[ext_resource type="PackedScene" uid="uid://dcupfsj2kwfyd" path="res://levels/menubutton.tscn" id="14_hp7xw"]
+[ext_resource type="PackedScene" uid="uid://dqsi7hqmcgeyx" path="res://doodads/hexor.tscn" id="15_r6e5l"]
+[ext_resource type="Script" uid="uid://bq5h6luybup0m" path="res://doodads/sequencer.gd" id="16_of1t3"]
+[ext_resource type="Script" uid="uid://dvwdmj8xcb8iw" path="res://doodads/train.gd" id="17_porj3"]
+[ext_resource type="Texture2D" uid="uid://md28e705c4ps" path="res://doodads/images/terminal.png" id="18_dr8qy"]
+[ext_resource type="Texture2D" uid="uid://wo7qu6a8ulmx" path="res://doodads/images/train.png" id="19_uf4fq"]
+[ext_resource type="Texture2D" uid="uid://dp66oqgssae1v" path="res://decoration/smoke.png" id="20_cwafx"]
+[ext_resource type="Theme" uid="uid://dnuehy1xf6waf" path="res://theme/sitelennasinnasa.tres" id="21_x2b6t"]
+[ext_resource type="Texture2D" uid="uid://cjemhybvhg4gf" path="res://doodads/images/house1.png" id="22_41m1e"]
+[ext_resource type="Texture2D" uid="uid://s6tjk2p6tync" path="res://doodads/images/rail.png" id="23_7fpyg"]
+[ext_resource type="Script" uid="uid://b0tmkrv41tycl" path="res://doodads/railsegment.gd" id="24_b5ios"]
+[ext_resource type="Texture2D" uid="uid://sp5xauhgallv" path="res://doodads/images/house2.png" id="24_vgiu7"]
+[ext_resource type="PackedScene" uid="uid://dkufa6shviqm7" path="res://doodads/railsegment.tscn" id="25_80yh4"]
+[ext_resource type="Script" uid="uid://byaaa6an6nbmb" path="res://doodads/terminal.gd" id="25_f78el"]
+[ext_resource type="PackedScene" uid="uid://b5sl048nwee4a" path="res://levels/SequenceTable.tscn" id="28_oci7l"]
+
+[sub_resource type="Gradient" id="Gradient_omb84"]
+colors = PackedColorArray(1, 1, 1, 1, 0.003921569, 0.003921569, 0.003921569, 0.49803922)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rtr7"]
+size = Vector2(837, 8500)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m58vp"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Level6" type="Node2D" unique_id=1203923865]
+script = ExtResource("1_6jpri")
+wirewidth = 0.01
+
+[node name="bg" type="TextureRect" parent="." unique_id=37175177]
+self_modulate = Color(0.42, 0.42, 0.42, 1)
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("2_2qc5d")
+
+[node name="SpawnLimiter" parent="." unique_id=949111090 instance=ExtResource("3_8yor3")]
+position = Vector2(731, 10.000001)
+scale = Vector2(0.4, 0.4)
+
+[node name="Spawnbutton3" parent="." unique_id=1593536310 node_paths=PackedStringArray("counter") instance=ExtResource("4_lxnlc")]
+position = Vector2(608.0002, 9.536743e-06)
+scale = Vector2(0.35, 0.35)
+gateScene = ExtResource("5_u8jes")
+icon = ExtResource("6_hd1f1")
+counter = NodePath("../SpawnLimiter")
+gatescale = 0.085
+
+[node name="Spawnbutton2" parent="." unique_id=1388948706 node_paths=PackedStringArray("counter") instance=ExtResource("4_lxnlc")]
+position = Vector2(488.6111, 0.27121007)
+scale = Vector2(0.35, 0.35)
+gateScene = ExtResource("15_r6e5l")
+icon = ExtResource("8_b5ios")
+counter = NodePath("../SpawnLimiter")
+gatescale = 0.05
+
+[node name="trash" parent="." unique_id=2056507829 node_paths=PackedStringArray("spawnLimiter") instance=ExtResource("7_m1m2e")]
+position = Vector2(845.99994, 3.0000005)
+scale = Vector2(0.17, 0.17)
+spawnLimiter = NodePath("../SpawnLimiter")
+
+[node name="Const1Gate" parent="." unique_id=997263221 instance=ExtResource("8_5g61v")]
+position = Vector2(-194.99997, 261)
+scale = Vector2(0.1, 0.1)
+
+[node name="1" parent="Const1Gate" index="1" unique_id=1465797355]
+locked = true
+
+[node name="Const1Gate2" parent="." unique_id=238093885 instance=ExtResource("8_5g61v")]
+position = Vector2(-154.99998, 333.00006)
+scale = Vector2(0.1, 0.1)
+
+[node name="0" parent="Const1Gate2" index="0" unique_id=1841688787]
+locked = true
+
+[node name="1" parent="Const1Gate2" index="1" unique_id=1465797355]
+locked = true
+
+[node name="2" parent="Const1Gate2" index="2" unique_id=107635713]
+locked = true
+
+[node name="Lightbulb" parent="." unique_id=994670299 instance=ExtResource("12_mft6l")]
+position = Vector2(748, 160)
+scale = Vector2(0.08, 0.08)
+nimi = "tu"
+
+[node name="Wire6" parent="." unique_id=1131736701 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_lmkk1")]
+position = Vector2(-103.52998, 178.85)
+rotation = 2.978778
+scale = Vector2(0.26342377, 0.019999994)
+term1 = NodePath("../Const1Gate/1")
+term2 = NodePath("../sequencetrain/Terminal2")
+rerender = true
+
+[node name="Wire3" parent="." unique_id=1067625729 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_lmkk1")]
+position = Vector2(-83.52999, 274.35004)
+rotation = -3.1220448
+scale = Vector2(0.21998198, 0.02)
+term1 = NodePath("../Const1Gate2/1")
+term2 = NodePath("../sequencetrain/Terminal4")
+rerender = true
+
+[node name="Wire4" parent="." unique_id=1203960880 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_lmkk1")]
+position = Vector2(-83.17999, 453.00003)
+rotation = -2.6303215
+scale = Vector2(0.25138643, 0.019999998)
+term1 = NodePath("../Const1Gate2/2")
+term2 = NodePath("../sequencetrain/Terminal8")
+rerender = true
+
+[node name="menubutton" parent="." unique_id=1729448233 instance=ExtResource("14_hp7xw")]
+offset_left = 151.99998
+offset_right = 151.99998
+scale = Vector2(0.8, 0.8)
+
+[node name="sequencetrain" type="Node2D" parent="." unique_id=2002650549]
+position = Vector2(75.999985, 97.999985)
+scale = Vector2(0.07, 0.07)
+script = ExtResource("16_of1t3")
+length = 8
+nimi = "wan"
+
+[node name="Train" type="Node2D" parent="sequencetrain" unique_id=1912274269]
+z_index = 1
+position = Vector2(0, -850)
+script = ExtResource("17_porj3")
+
+[node name="Terminal" type="Sprite2D" parent="sequencetrain/Train" unique_id=1203758527]
+position = Vector2(89, -6)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_dr8qy")
+
+[node name="Sprite2D" type="Sprite2D" parent="sequencetrain/Train" unique_id=1084738353]
+position = Vector2(-32.499985, -25.99997)
+scale = Vector2(1.495, 1.472)
+texture = ExtResource("19_uf4fq")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="sequencetrain/Train" unique_id=929876498]
+position = Vector2(-16, -304)
+emitting = false
+amount = 12
+texture = ExtResource("20_cwafx")
+lifetime = 2.0
+direction = Vector2(0, -1)
+spread = 16.93
+gravity = Vector2(0, 0)
+initial_velocity_min = 186.54
+initial_velocity_max = 474.01
+angle_max = 380.0
+scale_amount_min = 0.05
+scale_amount_max = 0.15
+color_ramp = SubResource("Gradient_omb84")
+
+[node name="draggable" type="Area2D" parent="sequencetrain" unique_id=920224182]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequencetrain/draggable" unique_id=476959739]
+position = Vector2(-28.5, 2975)
+shape = SubResource("RectangleShape2D_4rtr7")
+
+[node name="House1" type="Node2D" parent="sequencetrain" unique_id=1763536648]
+position = Vector2(0, -850)
+
+[node name="Panel" type="Panel" parent="sequencetrain/House1" unique_id=1075977627]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -296.0
+offset_top = -237.0
+offset_right = 244.0
+offset_bottom = 406.0
+theme = ExtResource("21_x2b6t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_m58vp")
+
+[node name="TextureRect3" type="TextureRect" parent="sequencetrain/House1" unique_id=107964359]
+z_index = 2
+offset_left = -465.0
+offset_top = -775.0
+offset_right = 424.0
+offset_bottom = 255.0
+texture = ExtResource("22_41m1e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="sequencetrain/House1" unique_id=168003827]
+z_index = 2
+offset_left = -549.0
+offset_top = -496.0
+offset_right = 521.0
+offset_bottom = 567.0
+texture = ExtResource("22_41m1e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="House2" type="Node2D" parent="sequencetrain" unique_id=1622528927]
+position = Vector2(0, 6800)
+
+[node name="Panel" type="Panel" parent="sequencetrain/House2" unique_id=1632023866]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -296.0
+offset_top = -237.0
+offset_right = 244.0
+offset_bottom = 406.0
+theme = ExtResource("21_x2b6t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_m58vp")
+
+[node name="TextureRect2" type="TextureRect" parent="sequencetrain/House2" unique_id=453183623]
+offset_left = -452.0
+offset_top = -444.0
+offset_right = 398.0
+offset_bottom = 406.0
+texture = ExtResource("23_7fpyg")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="sequencetrain/House2" unique_id=1214604653]
+z_index = 2
+offset_left = -604.0
+offset_top = -690.0
+offset_right = 576.0
+offset_bottom = 453.0
+texture = ExtResource("24_vgiu7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="sequencetrain/House2/TextureRect3" unique_id=462445289]
+z_index = 2
+layout_mode = 0
+offset_left = 304.0
+offset_top = 674.0
+offset_right = 579.5
+offset_bottom = 815.5
+scale = Vector2(2, 2)
+theme = ExtResource("21_x2b6t")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "wan"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="out" parent="sequencetrain" unique_id=991727953 instance=ExtResource("10_jk5qh")]
+z_index = 1
+position = Vector2(578, -850)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+locked = false
+
+[node name="Tawa" type="Button" parent="sequencetrain" unique_id=1079433655]
+offset_left = -1006.0
+offset_top = -1235.0
+offset_right = -766.5
+offset_bottom = -902.0
+scale = Vector2(2, 2)
+theme = ExtResource("21_x2b6t")
+theme_override_font_sizes/font_size = 160
+text = "tawa"
+
+[node name="loje laso" type="Node2D" parent="sequencetrain" unique_id=113837451 instance=ExtResource("25_80yh4")]
+script = ExtResource("24_b5ios")
+
+[node name="Terminal1" type="Node2D" parent="sequencetrain" unique_id=1465513475 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 0)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="loje" type="Node2D" parent="sequencetrain" unique_id=701038191 instance=ExtResource("25_80yh4")]
+position = Vector2(0, 850)
+script = ExtResource("24_b5ios")
+
+[node name="Terminal2" type="Node2D" parent="sequencetrain" unique_id=1117590031 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 850)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="loje jelo" type="Node2D" parent="sequencetrain" unique_id=1528695379 instance=ExtResource("25_80yh4")]
+position = Vector2(0, 1700)
+script = ExtResource("24_b5ios")
+
+[node name="Terminal3" type="Node2D" parent="sequencetrain" unique_id=1966120346 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 1700)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="jelo" type="Node2D" parent="sequencetrain" unique_id=874241715 instance=ExtResource("25_80yh4")]
+position = Vector2(0, 2550)
+script = ExtResource("24_b5ios")
+
+[node name="Terminal4" type="Node2D" parent="sequencetrain" unique_id=842906966 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 2550)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="jelo laso" type="Node2D" parent="sequencetrain" unique_id=833413726 instance=ExtResource("25_80yh4")]
+position = Vector2(0, 3400)
+script = ExtResource("24_b5ios")
+
+[node name="Terminal5" type="Node2D" parent="sequencetrain" unique_id=1243642741 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 3400)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="laso jelo" type="Node2D" parent="sequencetrain" unique_id=1676813332 instance=ExtResource("25_80yh4")]
+position = Vector2(0, 4250)
+script = ExtResource("24_b5ios")
+
+[node name="Terminal6" type="Node2D" parent="sequencetrain" unique_id=1154071199 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 4250)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="laso" type="Node2D" parent="sequencetrain" unique_id=1201465946 instance=ExtResource("25_80yh4")]
+position = Vector2(0, 5100)
+script = ExtResource("24_b5ios")
+
+[node name="Terminal7" type="Node2D" parent="sequencetrain" unique_id=355635435 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 5100)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="laso loje" type="Node2D" parent="sequencetrain" unique_id=1836454045 instance=ExtResource("25_80yh4")]
+position = Vector2(0, 5950)
+script = ExtResource("24_b5ios")
+
+[node name="Terminal8" type="Node2D" parent="sequencetrain" unique_id=6642226 instance=ExtResource("10_jk5qh")]
+position = Vector2(-708, 5950)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("25_f78el")
+locked = true
+
+[node name="SeqTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "trains") instance=ExtResource("28_oci7l")]
+offset_left = 709.0
+offset_top = 218.0
+offset_right = 709.0
+offset_bottom = 218.0
+scale = Vector2(0.5, 0.5)
+lights = [NodePath("../Lightbulb")]
+trains = [NodePath("../sequencetrain")]
+values = Array[int]([0, 1, 1, 0, 0, 1, 1, 0])
+reload = true
+length = 8
+
+[node name="TableLabel" parent="SeqTable" index="0" unique_id=382658699]
+offset_right = 500.0
+offset_bottom = 765.0
+text = "[table=2][cell padding=2,2,2,2][center]tomo tawa[/center][/cell] 
+[cell ][center]ilosuno[/center][/cell][cell][table=1][cell][tomo tawa][/cell][cell bg=#ff55aa][center]loje laso[/center][/cell][cell bg=#ff8888][center]loje[/center][/cell][cell bg=#ff9955][center]loje jelo[/center][/cell][cell bg=#ffff55][center]jelo[/center][/cell][cell bg=#aaff55][center]jelo laso[/center][/cell][cell bg=#88ffbb][center]laso jelo[/center][/cell][cell bg=#55ccff][center]laso[/center][/cell][cell bg=#aa55ff][center]laso loje[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][tu&wan][/cell][cell][center]ala[/center][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
+
+[node name="lukinale" parent="SeqTable" index="1" unique_id=2116686411]
+offset_left = -301.0
+offset_top = 599.0
+offset_right = 9.0
+offset_bottom = 755.0
+
+[node name="Wire5" parent="." unique_id=241528333 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("13_lmkk1")]
+position = Vector2(-26.88, 364.7)
+rotation = -2.6177735
+scale = Vector2(0.123152904, 0.019999998)
+term1 = NodePath("../Const1Gate2/0")
+term2 = NodePath("../sequencetrain/Terminal6")
+
+[editable path="Const1Gate"]
+[editable path="Const1Gate2"]
+[editable path="SeqTable"]

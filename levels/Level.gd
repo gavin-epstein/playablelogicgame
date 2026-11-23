@@ -10,6 +10,7 @@ func _ready():
 	if wirewidth != .02:
 		edited.connect(resizeWires)
 		resizeWires()
+		#edited.connect(process_doodads)
 func win():
 	if !won:
 		won=true

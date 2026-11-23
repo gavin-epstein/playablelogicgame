@@ -8,5 +8,7 @@ func _process(delta: float) -> void:
 	position+= dir* delta * (width/scroll_time)	
 	if position.x > 960:
 		position.x -= (width+960)
-	if position.y > 600:
+	if position.y > 600 and dir.y > 0:
 		position.y -= (height+600)
+	if position.y < -1*height and dir.y <0:
+		position.y += (height*2)

@@ -11,7 +11,8 @@ andlatch
 thinkingwithlatches
 nandnorintro
 explosionintro
-#nandorlatch -revisit with sequence input?
+nandnorlatch
+nandnorsrlatch
 makexor1
 makexor2
 moonintro
@@ -27,4 +28,5 @@ hammerequal
 hammersnakesplitter
 chainhammer
 hammersnakerotation
-#hammer memory cell sequence input
+# hammemory revisit with edge detector, delay diode, or priority processor. or better engine?
+# nandnortflipflop - revisit with rising edge detector

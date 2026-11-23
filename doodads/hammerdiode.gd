@@ -1,13 +1,19 @@
 extends Gate
 var lasta = 0;
-
+var switchstable = 0
 func diode(inn,out):
 	var v = input(inn)
 	#outputs[get_node(inn)] = 0;
 	output(out,v)
-
+func _process(_delta: float) -> void:
+	super(_delta)
+	switchstable = false
 
 func calculate():
+	if ! switchstable:
+		get_node("in").changed.emit()
+		switchstable = true
+		return
 	var a  = input("in")
 	if a == 0:
 		$arrows.rotation = PI

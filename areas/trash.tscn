@@ -20,6 +20,7 @@ offset_left = 57.0
 offset_top = 69.0
 offset_right = 621.0
 offset_bottom = 614.0
+mouse_filter = 2
 theme = ExtResource("2_2r1i4")
 theme_override_colors/default_color = Color(0.26, 1, 0.3216666, 1)
 theme_override_font_sizes/normal_font_size = 400

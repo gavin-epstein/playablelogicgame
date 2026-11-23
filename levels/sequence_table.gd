@@ -12,6 +12,7 @@ extends Control
 	set(new):
 		if Engine.is_editor_hint():
 			reload= true
+			resetrows()
 			generate()
 @export var length= 0
 var roworder = []
@@ -24,7 +25,9 @@ func _ready() -> void:
 		if get_parent() is Level:
 			get_parent().edited.connect(_reset_validated)
 		for train in trains:
-			train.get_node("Tawa").pressed.connect(runTrains)
+			train.get_node("Tawa").pressed.connect(trainstep)
+		for light in lights:
+			light.changed.connect(_attempt_validate)
 		
 func resetrows():
 	length =0
@@ -125,15 +128,19 @@ func _attempt_validate():
 			get_parent().win() 
 
 
-
+func trainstep():
+	for train:Sequencer in trains:
+		train.advance()
+	_attempt_validate()
 		
 func runTrains():
 	if ! running:
 		running = true
-		for i in range(length+1):
-			for train:Sequencer in trains:
-				train.advance()
-			_attempt_validate()
+		if trains[0].state ==0:
+			trainstep()
+			await get_tree().create_timer(.66).timeout
+		while trains[0].state !=0:
+			trainstep()
 			await get_tree().create_timer(.66).timeout
 		running = false
 		for train:Sequencer in trains:

@@ -94,7 +94,7 @@ func _on_draggable_input_event(_viewport:Node, event:InputEvent, _shape_idx:int)
 				area.onDropped(self)
 	
 func _input(event: InputEvent) -> void:
-	if beingDragged and event is InputEventMouseMotion:
+	if !Engine.is_editor_hint() and beingDragged and event is InputEventMouseMotion:
 		self.global_position = event.position
 		for child in get_children():
 			if child is WireTerminal and child.wire!=null:

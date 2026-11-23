@@ -18,15 +18,22 @@
 [ext_resource type="PackedScene" uid="uid://bl7gcpopydkuw" path="res://levels/actualLevels/makexor2.tscn" id="13_lalqq"]
 [ext_resource type="PackedScene" uid="uid://dx8x1amrswfut" path="res://levels/actualLevels/rot3intro.tscn" id="14_4f7c6"]
 [ext_resource type="PackedScene" uid="uid://bcwml6q8g7l76" path="res://levels/actualLevels/rot3latch.tscn" id="15_5ay5m"]
+[ext_resource type="PackedScene" uid="uid://crf54wb4mgpmj" path="res://levels/actualLevels/nandnorlatch.tscn" id="15_uam5l"]
 [ext_resource type="PackedScene" uid="uid://rp6exflsqdc3" path="res://levels/actualLevels/rot3splitand.tscn" id="16_0dlld"]
 [ext_resource type="PackedScene" uid="uid://cnoirl53yab8w" path="res://levels/actualLevels/moonintro.tscn" id="16_260hr"]
 [ext_resource type="PackedScene" uid="uid://dhahvqxp3eoaj" path="res://levels/actualLevels/andwithmoon.tscn" id="17_vjgwe"]
 [ext_resource type="PackedScene" uid="uid://df8wdqwe45eyn" path="res://levels/actualLevels/moonfilter.tscn" id="19_awone"]
 [ext_resource type="PackedScene" uid="uid://dfyfnjeg6xlyg" path="res://levels/actualLevels/moonxor.tscn" id="20_cf5xo"]
 [ext_resource type="PackedScene" uid="uid://dat8fxxim1rh4" path="res://levels/actualLevels/hammernot.tscn" id="24_lalqq"]
+[ext_resource type="PackedScene" uid="uid://duyw7do2j7jy1" path="res://levels/actualLevels/hammerlatch.tscn" id="25_0dlld"]
+[ext_resource type="PackedScene" uid="uid://n4jbtm41j1sm" path="res://levels/actualLevels/hammerequal.tscn" id="26_uam5l"]
+[ext_resource type="PackedScene" uid="uid://bkuqj2n8ucbif" path="res://levels/actualLevels/hammersnakesplitter.tscn" id="27_er3am"]
+[ext_resource type="PackedScene" uid="uid://clink1a3e1fg1" path="res://levels/actualLevels/chainhammer.tscn" id="28_nji1g"]
+[ext_resource type="PackedScene" uid="uid://dpnegrcjv2amo" path="res://levels/actualLevels/hammersnakerotation.tscn" id="29_hmkwn"]
+[ext_resource type="PackedScene" uid="uid://c4thfvc7xu4gp" path="res://levels/actualLevels/hammemory.tscn" id="30_tqtcn"]
 
 [node name="GlobalProgress" type="Node2D" unique_id=642168436]
 script = ExtResource("1_y2oj0")
-levelScenes = [ExtResource("2_6ccdi"), ExtResource("3_5y21u"), ExtResource("4_5r7sx"), ExtResource("6_260hr"), ExtResource("7_vjgwe"), ExtResource("8_5r7sx"), ExtResource("9_mgmcb"), ExtResource("8_w2wc1"), ExtResource("9_d8trw"), ExtResource("11_3hj5w"), ExtResource("11_mgmcb"), ExtResource("10_3hj5w"), ExtResource("12_cf5xo"), ExtResource("11_awone"), ExtResource("13_lalqq"), ExtResource("16_260hr"), ExtResource("17_vjgwe"), ExtResource("19_awone"), ExtResource("20_cf5xo"), ExtResource("14_4f7c6"), ExtResource("15_5ay5m"), ExtResource("16_0dlld"), ExtResource("24_lalqq")]
+levelScenes = [ExtResource("2_6ccdi"), ExtResource("3_5y21u"), ExtResource("4_5r7sx"), ExtResource("6_260hr"), ExtResource("7_vjgwe"), ExtResource("8_5r7sx"), ExtResource("9_mgmcb"), ExtResource("8_w2wc1"), ExtResource("9_d8trw"), ExtResource("11_3hj5w"), ExtResource("11_mgmcb"), ExtResource("10_3hj5w"), ExtResource("12_cf5xo"), ExtResource("15_uam5l"), ExtResource("11_awone"), ExtResource("13_lalqq"), ExtResource("16_260hr"), ExtResource("17_vjgwe"), ExtResource("19_awone"), ExtResource("20_cf5xo"), ExtResource("14_4f7c6"), ExtResource("15_5ay5m"), ExtResource("16_0dlld"), ExtResource("24_lalqq"), ExtResource("25_0dlld"), ExtResource("26_uam5l"), ExtResource("27_er3am"), ExtResource("28_nji1g"), ExtResource("29_hmkwn"), ExtResource("30_tqtcn")]
 reload = true
-totalLevels = 19
+totalLevels = 29

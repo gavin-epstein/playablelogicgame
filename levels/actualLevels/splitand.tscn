@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_jpo5x"]
 [ext_resource type="Texture2D" uid="uid://i761oq0f12aw" path="res://decoration/5.png" id="2_2ro5o"]
+[ext_resource type="Texture2D" uid="uid://dk3wg8dcisa6n" path="res://decoration/diamonds.png" id="3_2wo4r"]
 [ext_resource type="PackedScene" uid="uid://c4ttv458hke38" path="res://levels/truthTable.tscn" id="3_tuurb"]
 [ext_resource type="PackedScene" uid="uid://svfvj0gwbfmm" path="res://levels/spawnLimiter.tscn" id="4_2wo4r"]
+[ext_resource type="Script" uid="uid://uqc6cp7fqkfj" path="res://levels/oneoff/slowscroll.gd" id="4_bwvpp"]
 [ext_resource type="PackedScene" uid="uid://bpqkjs8v0fk2c" path="res://areas/trash.tscn" id="5_bwvpp"]
 [ext_resource type="PackedScene" uid="uid://ch10l0wcklr3a" path="res://doodads/andgate.tscn" id="6_w24y8"]
 [ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="7_eeimf"]
@@ -27,6 +29,33 @@ scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("2_2ro5o")
 
+[node name="bg2" type="TextureRect" parent="." unique_id=559834107]
+self_modulate = Color(0, 1, 1, 0.5803922)
+offset_right = 960.0
+offset_bottom = 1200.0
+mouse_filter = 2
+texture = ExtResource("3_2wo4r")
+stretch_mode = 4
+script = ExtResource("4_bwvpp")
+dir = Vector2(0, -1)
+width = 1920
+height = 1200
+scroll_time = 600.0
+
+[node name="bg3" type="TextureRect" parent="." unique_id=1471405503]
+self_modulate = Color(0, 1, 1, 0.5803922)
+offset_top = 1200.0
+offset_right = 960.0
+offset_bottom = 2400.0
+mouse_filter = 2
+texture = ExtResource("3_2wo4r")
+flip_v = true
+script = ExtResource("4_bwvpp")
+dir = Vector2(0, -1)
+width = 1920
+height = 1200
+scroll_time = 600.0
+
 [node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("3_tuurb")]
 offset_left = 647.0
 offset_top = 290.0
@@ -42,10 +71,10 @@ reload = true
 [node name="TableLabel" parent="TruthTable" index="0" unique_id=382658699]
 offset_left = -240.0
 offset_top = -18.0
-offset_right = 760.0
+offset_right = 626.0
 offset_bottom = 602.0
 text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
-[cell ][center]ilosuno[/center][/cell][cell][table=3][cell][wan][/cell][cell][tu][/cell][cell][wan&tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=2][cell][wan][/cell][cell][tu][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
+[cell ][center]ilosuno[/center][/cell][cell][table=3][cell][wan][/cell][cell][tu][/cell][cell][wan&tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=2][cell][tu&tu][/cell][cell][luka][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
 
 [node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
 offset_left = -533.0

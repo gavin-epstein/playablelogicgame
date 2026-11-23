@@ -48,7 +48,8 @@ columns = 5
 script = ExtResource("2_duh7t")
 reload = true
 
-[node name="Button5" type="Button" parent="GridContainer" unique_id=820382413 instance=ExtResource("3_6flho")]
+[node name="Button1" type="Button" parent="GridContainer" unique_id=820382413 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -57,7 +58,8 @@ text = "wan"
 script = ExtResource("4_ofye2")
 levelnumber = 1
 
-[node name="Button6" type="Button" parent="GridContainer" unique_id=1896217290 instance=ExtResource("3_6flho")]
+[node name="Button2" type="Button" parent="GridContainer" unique_id=1444725287 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -66,7 +68,8 @@ text = "tu"
 script = ExtResource("4_ofye2")
 levelnumber = 2
 
-[node name="Button7" type="Button" parent="GridContainer" unique_id=1212439165 instance=ExtResource("3_6flho")]
+[node name="Button3" type="Button" parent="GridContainer" unique_id=1053101337 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -75,7 +78,8 @@ text = "tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 3
 
-[node name="Button8" type="Button" parent="GridContainer" unique_id=1010217505 instance=ExtResource("3_6flho")]
+[node name="Button4" type="Button" parent="GridContainer" unique_id=1137768491 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -84,7 +88,8 @@ text = "tu&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 4
 
-[node name="Button9" type="Button" parent="GridContainer" unique_id=665055675 instance=ExtResource("3_6flho")]
+[node name="Button5" type="Button" parent="GridContainer" unique_id=661701592 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -93,7 +98,8 @@ text = "luka"
 script = ExtResource("4_ofye2")
 levelnumber = 5
 
-[node name="Button12" type="Button" parent="GridContainer" unique_id=477631742 instance=ExtResource("3_6flho")]
+[node name="Button6" type="Button" parent="GridContainer" unique_id=564000092 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -102,7 +108,8 @@ text = "luka&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 6
 
-[node name="Button13" type="Button" parent="GridContainer" unique_id=1838494713 instance=ExtResource("3_6flho")]
+[node name="Button7" type="Button" parent="GridContainer" unique_id=984759086 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -111,7 +118,8 @@ text = "luka&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 7
 
-[node name="Button14" type="Button" parent="GridContainer" unique_id=1680822949 instance=ExtResource("3_6flho")]
+[node name="Button8" type="Button" parent="GridContainer" unique_id=1645292812 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -120,7 +128,8 @@ text = "luka&tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 8
 
-[node name="Button26" type="Button" parent="GridContainer" unique_id=1290143432 instance=ExtResource("3_6flho")]
+[node name="Button9" type="Button" parent="GridContainer" unique_id=1461930507 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -129,7 +138,8 @@ text = "luka&tu&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 9
 
-[node name="Button27" type="Button" parent="GridContainer" unique_id=1400795601 instance=ExtResource("3_6flho")]
+[node name="Button10" type="Button" parent="GridContainer" unique_id=1109166654 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -138,7 +148,8 @@ text = "luka&luka"
 script = ExtResource("4_ofye2")
 levelnumber = 10
 
-[node name="Button28" type="Button" parent="GridContainer" unique_id=1184498066 instance=ExtResource("3_6flho")]
+[node name="Button11" type="Button" parent="GridContainer" unique_id=990087676 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -147,7 +158,8 @@ text = "luka&luka&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 11
 
-[node name="Button29" type="Button" parent="GridContainer" unique_id=1159606452 instance=ExtResource("3_6flho")]
+[node name="Button12" type="Button" parent="GridContainer" unique_id=61497733 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -156,7 +168,8 @@ text = "luka&luka&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 12
 
-[node name="Button30" type="Button" parent="GridContainer" unique_id=1361178805 instance=ExtResource("3_6flho")]
+[node name="Button13" type="Button" parent="GridContainer" unique_id=1637692571 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -165,7 +178,8 @@ text = "luka&luka&tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 13
 
-[node name="Button31" type="Button" parent="GridContainer" unique_id=1458809136 instance=ExtResource("3_6flho")]
+[node name="Button14" type="Button" parent="GridContainer" unique_id=875900818 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -174,7 +188,8 @@ text = "luka&luka&tu&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 14
 
-[node name="Button32" type="Button" parent="GridContainer" unique_id=841154236 instance=ExtResource("3_6flho")]
+[node name="Button15" type="Button" parent="GridContainer" unique_id=761840217 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -183,7 +198,8 @@ text = "luka&luka&luka"
 script = ExtResource("4_ofye2")
 levelnumber = 15
 
-[node name="Button33" type="Button" parent="GridContainer" unique_id=1073656463 instance=ExtResource("3_6flho")]
+[node name="Button16" type="Button" parent="GridContainer" unique_id=416512229 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -192,7 +208,8 @@ text = "luka&luka&luka&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 16
 
-[node name="Button34" type="Button" parent="GridContainer" unique_id=2039637017 instance=ExtResource("3_6flho")]
+[node name="Button17" type="Button" parent="GridContainer" unique_id=1818763721 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -201,7 +218,8 @@ text = "luka&luka&luka&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 17
 
-[node name="Button35" type="Button" parent="GridContainer" unique_id=1432601065 instance=ExtResource("3_6flho")]
+[node name="Button18" type="Button" parent="GridContainer" unique_id=1100035485 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -210,7 +228,8 @@ text = "luka&luka&luka&tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 18
 
-[node name="Button36" type="Button" parent="GridContainer" unique_id=244142197 instance=ExtResource("3_6flho")]
+[node name="Button19" type="Button" parent="GridContainer" unique_id=1902710675 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -219,7 +238,8 @@ text = "luka&luka&luka&tu&tu"
 script = ExtResource("4_ofye2")
 levelnumber = 19
 
-[node name="Button40" type="Button" parent="GridContainer" unique_id=1397928816 instance=ExtResource("3_6flho")]
+[node name="Button20" type="Button" parent="GridContainer" unique_id=792061506 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -228,7 +248,8 @@ text = "luka&luka&luka&luka"
 script = ExtResource("4_ofye2")
 levelnumber = 20
 
-[node name="Button44" type="Button" parent="GridContainer" unique_id=1755108372 instance=ExtResource("3_6flho")]
+[node name="Button21" type="Button" parent="GridContainer" unique_id=101275388 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -238,7 +259,8 @@ text = "mute02wan"
 script = ExtResource("4_ofye2")
 levelnumber = 21
 
-[node name="Button45" type="Button" parent="GridContainer" unique_id=1267776767 instance=ExtResource("3_6flho")]
+[node name="Button22" type="Button" parent="GridContainer" unique_id=1565690937 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -248,7 +270,8 @@ text = "mute02tu"
 script = ExtResource("4_ofye2")
 levelnumber = 22
 
-[node name="Button46" type="Button" parent="GridContainer" unique_id=1971228494 instance=ExtResource("3_6flho")]
+[node name="Button23" type="Button" parent="GridContainer" unique_id=1227066568 instance=ExtResource("3_6flho")]
+z_index = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
@@ -257,6 +280,48 @@ theme_override_font_sizes/font_size = 20
 text = "mute02tu&wan"
 script = ExtResource("4_ofye2")
 levelnumber = 23
+
+[node name="Button24" type="Button" parent="GridContainer" unique_id=1380731630 instance=ExtResource("3_6flho")]
+z_index = 1
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+theme_override_font_sizes/font_size = 20
+text = "mute02tu&tu"
+script = ExtResource("4_ofye2")
+levelnumber = 24
+
+[node name="Button25" type="Button" parent="GridContainer" unique_id=1265218295 instance=ExtResource("3_6flho")]
+z_index = 1
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("1_0ettg")
+theme_override_font_sizes/font_size = 20
+text = "mute02luka"
+script = ExtResource("4_ofye2")
+levelnumber = 25
+
+[node name="LevelselectNext" type="Button" parent="." unique_id=1899087169]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 580.0
+offset_right = 968.0
+offset_bottom = 709.0
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+text = "suli"
+
+[node name="LevelselectPrev" type="Button" parent="." unique_id=1934749601]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 531.0
+offset_right = 607.0
+offset_bottom = 660.0
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+text = "suli"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1691486507]
 layout_mode = 0
@@ -456,6 +521,8 @@ offset_bottom = -788.0
 theme_override_font_sizes/font_size = 32
 text = "weka"
 
+[connection signal="pressed" from="LevelselectNext" to="GridContainer" method="changePage" binds= [1]]
+[connection signal="pressed" from="LevelselectPrev" to="GridContainer" method="changePage" binds= [-1]]
 [connection signal="tree_exiting" from="settings/sfxSlider" to="settings/sfxSlider" method="_on_tree_exiting"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Button/Control/Button" to="Button" method="_on_close_pressed"]

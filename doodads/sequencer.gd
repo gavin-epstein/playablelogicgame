@@ -10,7 +10,8 @@ class_name Sequencer extends Gate
 @export var nimi:String:
 	set(val):
 		nimi = val
-		$House2/TextureRect3/Label.text = nimi
+		if Engine.is_editor_hint():
+			$House2/TextureRect3/Label.text = nimi
 const railsegmentscene = preload("res://doodads/railsegment.tscn")
 const terminal = preload("res://doodads/terminal.tscn")
 const colors = {
@@ -43,7 +44,7 @@ func _ready():
 
 func calculate():
 	if !Engine.is_editor_hint():
-		if state == 0:
+		if state == 0 or state > length:
 			output("out",0)
 		else:
 			var a = input("Terminal"+str(state))
@@ -62,8 +63,10 @@ func regenerate():
 			return
 		for child in get_children():
 			if child is RailSegment:
+				child.name = "trash"
 				child.queue_free()
 			elif child is WireTerminal and child.name!="out":
+				child.name = "trash"
 				child.queue_free()
 		for i in range(length):
 			var segment:RailSegment = railsegmentscene.instantiate()
@@ -81,10 +84,14 @@ func regenerate():
 			term.name = "Terminal"+str(i+1)
 			
 		$House2.position.y = length*850;	
-		$draggable/CollisionShape2D.position.y = (length-1)*850/2
+		$draggable/CollisionShape2D.position.y = (length-1)*425
 		$draggable/CollisionShape2D.shape.size.y = (length+2)*850
 
 func advance():
 	state += 1
 	$Train.go_to_position(state)
 	calculate()
+
+func _explode():
+	super()
+	explosionsprite.position = $Train.position

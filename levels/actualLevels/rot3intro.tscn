@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_gvmw2"]
 [ext_resource type="Texture2D" uid="uid://cavgp0mfr53a7" path="res://decoration/6.png" id="2_0kgyf"]
+[ext_resource type="Texture2D" uid="uid://bhwqbcl1tcq2e" path="res://decoration/spinny1.png" id="3_0kgyf"]
 [ext_resource type="PackedScene" uid="uid://c4ttv458hke38" path="res://levels/truthTable.tscn" id="3_xetoq"]
 [ext_resource type="PackedScene" uid="uid://ch10l0wcklr3a" path="res://doodads/andgate.tscn" id="4_403s4"]
+[ext_resource type="Script" uid="uid://b5esopg1f3ume" path="res://levels/oneoff/spinny.gd" id="4_xetoq"]
 [ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="5_t2pg0"]
 [ext_resource type="PackedScene" uid="uid://diraivbxdkd0w" path="res://doodads/levermux2.tscn" id="6_ekcsy"]
 [ext_resource type="PackedScene" uid="uid://bvimmyvxk5tou" path="res://doodads/lightbulb.tscn" id="7_q88pt"]
@@ -21,6 +23,19 @@ scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("2_0kgyf")
 
+[node name="bg2" type="TextureRect" parent="." unique_id=617127329]
+offset_left = -721.00006
+offset_top = -896.99994
+offset_right = 1679.0
+offset_bottom = 1503.0
+rotation = 3.270747
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(1200, 1200)
+mouse_filter = 2
+texture = ExtResource("3_0kgyf")
+stretch_mode = 4
+script = ExtResource("4_xetoq")
+
 [node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("3_xetoq")]
 offset_left = 648.0
 offset_top = 290.0
@@ -37,7 +52,7 @@ offset_top = -4.0
 offset_right = 600.0
 offset_bottom = 545.0
 text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
-[cell ][center]ilosuno[/center][/cell][cell][table=2][cell][wan][/cell][cell][tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][ilo suno][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
+[cell ][center]ilosuno[/center][/cell][cell][table=2][cell][wan][/cell][cell][tu][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][cell][center]sewi2[/center][/cell][cell][center]anpa[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=1][cell][tu&wan][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][/table][/cell]"
 
 [node name="lukinale" parent="TruthTable" index="1" unique_id=2116686411]
 offset_left = 139.0

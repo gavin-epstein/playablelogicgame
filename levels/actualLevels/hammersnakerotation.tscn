@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bctae26yxqo8l" path="res://levels/Level.gd" id="1_wi3h7"]
 [ext_resource type="Texture2D" uid="uid://b414uc7we8hug" path="res://decoration/15.png" id="2_fs8uj"]
 [ext_resource type="PackedScene" uid="uid://c4ttv458hke38" path="res://levels/truthTable.tscn" id="3_fnu75"]
+[ext_resource type="Texture2D" uid="uid://b2u4o42kangax" path="res://decoration/spinny3.png" id="3_mgwbd"]
 [ext_resource type="PackedScene" uid="uid://svfvj0gwbfmm" path="res://levels/spawnLimiter.tscn" id="4_mgwbd"]
+[ext_resource type="Script" uid="uid://b5esopg1f3ume" path="res://levels/oneoff/spinny.gd" id="4_r0iu6"]
 [ext_resource type="PackedScene" uid="uid://bpqkjs8v0fk2c" path="res://areas/trash.tscn" id="5_r0iu6"]
 [ext_resource type="PackedScene" uid="uid://ch10l0wcklr3a" path="res://doodads/andgate.tscn" id="6_b1too"]
 [ext_resource type="PackedScene" uid="uid://bbylgf6igtoa8" path="res://doodads/const_1_gate.tscn" id="7_jppcn"]
@@ -35,6 +37,20 @@ scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("2_fs8uj")
 
+[node name="bg2" type="TextureRect" parent="." unique_id=517676661]
+self_modulate = Color(0.5019608, 1, 0, 1)
+offset_left = -721.00006
+offset_top = -896.99994
+offset_right = 1679.0
+offset_bottom = 1503.0
+rotation = 3.270747
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(1200, 1200)
+mouse_filter = 2
+texture = ExtResource("3_mgwbd")
+stretch_mode = 4
+script = ExtResource("4_r0iu6")
+
 [node name="TruthTable" parent="." unique_id=1459266319 node_paths=PackedStringArray("lights", "switches") instance=ExtResource("3_fnu75")]
 offset_left = 763.00006
 offset_top = 212.0
@@ -49,7 +65,7 @@ reload = true
 [node name="TableLabel" parent="TruthTable" index="0" unique_id=382658699]
 offset_left = -177.77771
 offset_top = 319.7779
-offset_right = 393.33313
+offset_right = 422.2223
 offset_bottom = 828.889
 text = "[table=2][cell padding=2,2,2,2][center]ilo luka[/center][/cell] 
 [cell ][center]ilosuno[/center][/cell][cell][table=1][cell][wan][/cell][cell][center]sewi2[/center][/cell][cell][center]lon[/center][/cell][cell][center]anpa[/center][/cell][/table][/cell][cell padding=-4,0,0,0][table=2][cell][tu][/cell][cell][tu&wan][/cell][cell][center]wawa[/center][/cell][cell][center]ala[/center][/cell][cell][center]ala[/center][/cell][cell][center]mun[/center][/cell][cell][center]mun[/center][/cell][cell][center]wawa[/center][/cell][/table][/cell]"
@@ -143,7 +159,7 @@ rerender = true
 [node name="Wire2" parent="." unique_id=1157537607 node_paths=PackedStringArray("term1", "term2") instance=ExtResource("12_lb6s1")]
 position = Vector2(-166.45, 225.90005)
 rotation = 2.7832625
-scale = Vector2(0.3986187, 0.019999998)
+scale = Vector2(0.39861876, 0.019999998)
 term1 = NodePath("../dummy/0")
 term2 = NodePath("../lever/mid")
 rerender = true
